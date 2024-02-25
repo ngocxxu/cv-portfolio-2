@@ -3,9 +3,24 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { BrowserRouter } from "react-router-dom";
 import { MantineProvider, createTheme } from "@mantine/core";
+import "./index.css";
 
 const theme = createTheme({
-  /** Put your mantine theme override here */
+  primaryColor: "primary-color",
+  colors: {
+    "primary-color": [
+      "#F0FFF5",
+      "#D1FFDE",
+      "#A3FFC8",
+      "#75FFB1",
+      "#47FF9B",
+      "#19FF84",
+      "#00E776",
+      "#00B460",
+      "#008B4A",
+      "#005732",
+    ],
+  },
 });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

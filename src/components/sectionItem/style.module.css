@@ -1,0 +1,11 @@
+.section {
+  padding: 68px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  max-width: 770px;
+  width: 100%;
+  margin-left: auto;
+}

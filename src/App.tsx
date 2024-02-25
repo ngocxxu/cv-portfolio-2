@@ -1,8 +1,8 @@
-import { Chip } from "@mantine/core";
 import "@mantine/core/styles.css";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { ContainerPage } from "./page/container";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,7 +20,7 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 function App() {
-  return <Chip defaultChecked>Awesome chip</Chip>;
+  return <ContainerPage />;
 }
 
 export default App;
