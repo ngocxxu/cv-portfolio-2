@@ -9,6 +9,7 @@ const Home = () => {
       <TypeAnimation
         sequence={[DataUser.home.bigText, 1000, DataUser.home.bigText2, 1000]}
         speed={50}
+        deletionSpeed={90}
         repeat={Infinity}
         className={style.title}
       />
