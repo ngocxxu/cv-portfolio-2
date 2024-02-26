@@ -2,19 +2,10 @@ export const DataUser = {
   home: {
     name: "Ngoc Quach",
     enName: "Bono",
-    jobTitle: "",
+    jobTitle: "Frontend Developer",
+    address: "Ho Chi Minh City, Viet Nam",
     bigText: "Say Hi from Bono, Frontend Developer",
-    social: [
-      {
-        icon: "IconBrandLinkedin",
-        link: "https://www.linkedin.com/in/ngoc-quach-17397620a/",
-      },
-      { icon: "IconBrandGithub", link: "https://github.com/ngocxxu" },
-      {
-        icon: "IconBrandFacebook",
-        link: "https://www.facebook.com/ngocquach97",
-      },
-    ],
+    mail: "ngocquach43@gmail.com",
     dateToWork: "06/2021",
     smallText:
       "I code beautifully simple things and i love what i do. Just simple like that!",

@@ -2,6 +2,7 @@ import "@mantine/core/styles.css";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { useRoutes } from "react-router-dom";
 import { ContainerPage } from "./page/container";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -20,7 +21,11 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 function App() {
-  return <ContainerPage />;
+  const routes = [{ path: "/", element: <ContainerPage /> }];
+
+  const element = useRoutes(routes);
+
+  return <>{element}</>;
 }
 
 export default App;
