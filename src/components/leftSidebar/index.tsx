@@ -1,4 +1,4 @@
-import { ActionIcon, Button, Group } from "@mantine/core";
+import { ActionIcon, Button } from "@mantine/core";
 import {
   IconBrandFacebook,
   IconBrandGithub,
@@ -26,13 +26,13 @@ const social = [
 export const LeftSidebar = () => {
   return (
     <div className={style.leftSidebar}>
-      <Group justify="space-between" mb="65px">
+      <div className={style.boxHeader}>
         <span className={style.name}>{DataUser.home.name}</span>
         <span className={style.jobTitle}>{DataUser.home.jobTitle}</span>
-      </Group>
+      </div>
       <img src={Me} alt="me" className={style.image} />
-      <h3 className={style.info}>{DataUser.home.mail}</h3>
-      <h3 className={style.info}>{DataUser.home.address}</h3>
+      <h3 className={style.email}>{DataUser.home.mail}</h3>
+      <h3 className={style.address}>{DataUser.home.address}</h3>
       <p className={style.copyRight}>
         © {format(new Date(), "yyyy")} {DataUser.home.enName}. All Rights
         Reserved
@@ -43,11 +43,9 @@ export const LeftSidebar = () => {
             classNames={{ root: style.actionIcon }}
             color="gray"
             key={link}
-            component="a"
-            href={link}
             size="xl"
             aria-label="Open in a new tab"
-            onClick={(event) => event.preventDefault()}
+            onClick={() => window.open(link, "_blank")}
             variant="outline"
             radius="xl"
           >
@@ -56,6 +54,7 @@ export const LeftSidebar = () => {
         ))}
       </div>
       <Button
+        onClick={() => window.open(DataUser.home.linkCV, "_blank")}
         leftSection={<IconMail />}
         className={style.themeBtn}
         variant="filled"

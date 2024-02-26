@@ -12,6 +12,11 @@
   background: #1f1f1f;
   z-index: 20;
   display: flex;
+
+  @media (max-width: 2000px) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .toolTip {

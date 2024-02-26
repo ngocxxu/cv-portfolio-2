@@ -6,13 +6,16 @@ import { DataUser } from "../../data";
 const Home = () => {
   return (
     <SectionItem>
-      <TypeAnimation
-        sequence={[DataUser.home.bigText, 1000, DataUser.home.bigText2, 1000]}
-        speed={50}
-        deletionSpeed={90}
-        repeat={Infinity}
-        className={style.title}
-      />
+      <div className={style.bigText}>
+        <TypeAnimation
+          sequence={[DataUser.home.bigText, 1000, DataUser.home.bigText2, 1000]}
+          speed={30}
+          deletionSpeed={70}
+          repeat={Infinity}
+          className={style.title}
+        />
+      </div>
+      <p className={style.smallText}>{DataUser.home.smallText}</p>
     </SectionItem>
   );
 };

@@ -1,11 +1,13 @@
 export const DataUser = {
   home: {
+    linkCV:
+      "https://www.topcv.vn/xem-cv/DFlWBgQGAw9dDwILVwIFVg4GCQ8MAgIDXFQLUg74ed",
     name: "Ngoc Quach",
     enName: "Bono",
     jobTitle: "Frontend Developer",
     address: "Ho Chi Minh City, Viet Nam",
-    bigText: "Say Hi from Bono, Frontend Developer",
-    bigText2: "Hope you have a nice day!",
+    bigText: "Say Hi from Ngoc Quach, Frontend Developer",
+    bigText2: "My energy never runs out at work!",
     mail: "ngocquach43@gmail.com",
     dateToWork: "06/2021",
     smallText:

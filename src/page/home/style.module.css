@@ -6,3 +6,12 @@
   font-weight: 300;
   color: #fff;
 }
+
+.smallText {
+  max-width: 480px;
+  margin-bottom: 31px;
+}
+
+.bigText {
+  height: 300px;
+}
