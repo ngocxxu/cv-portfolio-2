@@ -5,6 +5,7 @@ export const DataUser = {
     jobTitle: "Frontend Developer",
     address: "Ho Chi Minh City, Viet Nam",
     bigText: "Say Hi from Bono, Frontend Developer",
+    bigText2: "Hope you have a nice day!",
     mail: "ngocquach43@gmail.com",
     dateToWork: "06/2021",
     smallText:
