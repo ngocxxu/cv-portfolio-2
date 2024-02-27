@@ -1,0 +1,11 @@
+.bigText {
+  font-size: 48px;
+  line-height: 60px;
+  color: #fff;
+  font-weight: 300;
+  margin-bottom: 33px;
+}
+
+.bigText > span {
+  color: var(--mantine-primary-color-9);
+}
