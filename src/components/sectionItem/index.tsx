@@ -1,24 +1,25 @@
 import { Badge, Container } from "@mantine/core";
 import { ReactNode } from "react";
 import style from "./style.module.css";
-import { IconHome } from "@tabler/icons-react";
 
 type TSectionItemProps = {
   children: ReactNode;
+  icon: ReactNode;
+  title: string;
 };
 
-export const SectionItem = ({ children }: TSectionItemProps) => {
+export const SectionItem = ({ children, title, icon }: TSectionItemProps) => {
   return (
-    <section className={style.section}>
+    <section id={title} className={style.section}>
       <Container size="lg">
         <div className={style.content}>
           <Badge
-            leftSection={<IconHome size="0.9rem" className={style.icon} />}
+            leftSection={icon}
             className={style.badge}
             variant="outline"
             size="xl"
           >
-            Introduce
+            {title}
           </Badge>
           <div>{children}</div>
         </div>
