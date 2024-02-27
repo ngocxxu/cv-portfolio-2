@@ -19,9 +19,15 @@ export const TimelineCustom = ({ body }: TTimelineCustom) => {
       lineWidth={1}
       bulletSize={18}
     >
-      <Timeline.Item bullet={<IconGitBranch size={12} />} title="New branch">
-        2 hours ago
-      </Timeline.Item>
+      {body.map(({ company, position }) => (
+        <Timeline.Item
+          key={company}
+          bullet={<IconGitBranch size={12} />}
+          title={position}
+        >
+          {company}
+        </Timeline.Item>
+      ))}
     </Timeline>
   );
 };
