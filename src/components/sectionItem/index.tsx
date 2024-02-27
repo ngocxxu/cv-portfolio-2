@@ -1,5 +1,7 @@
 import { Badge, Container } from "@mantine/core";
-import { ReactNode } from "react";
+import { useInViewport } from "@mantine/hooks";
+import { ReactNode, useContext, useEffect } from "react";
+import { GlobalContext } from "../../context";
 import style from "./style.module.css";
 
 type TSectionItemProps = {
@@ -9,6 +11,16 @@ type TSectionItemProps = {
 };
 
 export const SectionItem = ({ children, title, icon }: TSectionItemProps) => {
+  const state = useContext(GlobalContext);
+  const { ref, inViewport } = useInViewport();
+
+  useEffect(() => {
+    if (inViewport && state) {
+      state.setViewPortState({ id: title, isView: inViewport });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inViewport]);
+
   return (
     <section id={title} className={style.section}>
       <Container size="lg">
@@ -21,7 +33,7 @@ export const SectionItem = ({ children, title, icon }: TSectionItemProps) => {
           >
             {title}
           </Badge>
-          <div>{children}</div>
+          <div ref={ref}>{children}</div>
         </div>
       </Container>
     </section>

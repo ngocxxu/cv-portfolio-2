@@ -4,6 +4,8 @@ import App from "./App.tsx";
 import { BrowserRouter } from "react-router-dom";
 import { MantineProvider, createTheme } from "@mantine/core";
 import "./index.css";
+import { themeToVars } from "@mantine/vanilla-extract";
+import GlobalProvider from "./context/index.tsx";
 
 const theme = createTheme({
   primaryColor: "primary-color",
@@ -28,12 +30,16 @@ const theme = createTheme({
   },
 });
 
+export const vars = themeToVars(theme);
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <MantineProvider theme={theme}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </MantineProvider>
+    <GlobalProvider>
+      <MantineProvider theme={theme}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </MantineProvider>
+    </GlobalProvider>
   </React.StrictMode>
 );

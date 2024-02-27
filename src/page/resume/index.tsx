@@ -1,6 +1,8 @@
 import { IconUser } from "@tabler/icons-react";
 import { SectionItem } from "../../components/sectionItem";
 import style from "./style.module.css";
+import { TimelineCustom } from "../../components/timeline";
+import { DataUser } from "../../data";
 
 const Resume = () => {
   return (
@@ -11,6 +13,7 @@ const Resume = () => {
       <div className={style.bigText}>
         Education & <span>Experience</span>
       </div>
+      <TimelineCustom body={DataUser.resume.experience} />
     </SectionItem>
   );
 };

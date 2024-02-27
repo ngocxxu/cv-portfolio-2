@@ -9,7 +9,10 @@ import {
   IconTriangleSquareCircle,
   IconUser,
 } from "@tabler/icons-react";
+import { vars } from "../../main";
 import style from "./style.module.css";
+import { GlobalContext } from "../../context";
+import { useContext } from "react";
 
 const data = [
   {
@@ -47,6 +50,7 @@ const data = [
 ];
 
 export const RightSidebar = () => {
+  const state = useContext(GlobalContext);
   const onClickHeaderItem = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -63,21 +67,33 @@ export const RightSidebar = () => {
 
   return (
     <div className={style.rightSidebar}>
-      {data.map(({ icon, title }) => (
-        <Tooltip
-          key={title}
-          classNames={{ tooltip: style.toolTip }}
-          withArrow
-          arrowPosition="side"
-          position="left"
-          label={title}
-          transitionProps={{ duration: 300, transition: "rotate-left" }}
-        >
-          <div className={style.icon} onClick={() => onClickHeaderItem(title)}>
-            {icon}
-          </div>
-        </Tooltip>
-      ))}
+      {data.map(({ icon, title }) => {
+        const isColor =
+          state?.viewPortState.isView && state.viewPortState.id === title;
+
+        return (
+          <Tooltip
+            key={title}
+            classNames={{ tooltip: style.toolTip }}
+            withArrow
+            arrowPosition="side"
+            position="left"
+            label={title}
+            transitionProps={{ duration: 300, transition: "rotate-left" }}
+          >
+            <div
+              style={{
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                color: isColor && (vars.colors.primaryColors[9] as any),
+              }}
+              className={style.icon}
+              onClick={() => onClickHeaderItem(title)}
+            >
+              {icon}
+            </div>
+          </Tooltip>
+        );
+      })}
     </div>
   );
 };
