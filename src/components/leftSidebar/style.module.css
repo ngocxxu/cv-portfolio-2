@@ -51,6 +51,7 @@
   border-radius: 30px;
   display: block;
   margin-bottom: 56px;
+  width: 100%;
 
   @media (max-width: 1555px) {
     width: 100%;

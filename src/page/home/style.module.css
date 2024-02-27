@@ -55,6 +55,11 @@
 .statistic {
   display: flex;
   gap: 100px;
+  margin-top: 50px;
+
+  @media (max-width: 2000px) {
+    margin-top: 0px;
+  }
 }
 
 .statistic > div > div {

@@ -21,6 +21,16 @@ const theme = createTheme({
       "#28e98c",
     ],
   },
+  breakpoints: {
+    xs: "30em",
+    sm: "48em",
+    md: "64em",
+    lg: "74em",
+    xl: "90em",
+    xxl: "1600px",
+    xxxl: "1800px",
+    xxxxl: "2000px",
+  },
 });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
