@@ -1,6 +1,7 @@
 import { Badge, Collapse, Group, Timeline } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconChevronUp, IconEye } from "@tabler/icons-react";
+import { IconEye } from "@tabler/icons-react";
+import { ReactNode, useState } from "react";
 import style from "./style.module.css";
 
 type TTimelineCustom = {
@@ -10,56 +11,25 @@ type TTimelineCustom = {
     position: string;
     description: string[];
   }[];
+  icon: ReactNode;
 };
 
-// type TOnCollapse = {
-//   company: string;
-//   isExist?: TDataCollapse;
-//   isOpen: boolean;
-// };
+type TDataCollapse = { id: string; isOpen: boolean };
 
-// type TDataCollapse = { id: string; isOpen: boolean };
-
-export const TimelineCustom = ({ body }: TTimelineCustom) => {
-  const [opened, { toggle }] = useDisclosure(false);
-  // const [dataCollapse, setDataCollapse] = useState<TDataCollapse[]>([
-  //   {
-  //     id: "",
-  //     isOpen: false,
-  //   },
-  // ]);
-
-  // const onCollapse = ({ company, isExist, isOpen }: TOnCollapse) => {
-  //   if (isExist) {
-  //     setDataCollapse(dataCollapse.filter((item) => item.id !== company));
-  //   } else {
-  //     setDataCollapse((old) => [
-  //       ...old,
-  //       {
-  //         id: company,
-  //         isOpen: isOpen,
-  //       },
-  //     ]);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   if (opened) {
-  //     onCollapse({
-  //       isOpen: opened,
-  //     });
-  //   }
-  // }, []);
+export const TimelineCustom = ({ body, icon }: TTimelineCustom) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_, { toggle }] = useDisclosure(false);
+  const [dataCollapse, setDataCollapse] = useState<TDataCollapse[]>([]);
 
   return (
     <Timeline active={3} reverseActive lineWidth={1} bulletSize={18}>
       {body.map(({ company, position, time, description }) => {
-        // const isExist = dataCollapse.find((item) => item.id === company);
+        const isExist = dataCollapse.find((item) => item.id === company);
 
         return (
           <Timeline.Item
             key={company}
-            bullet={<IconChevronUp size="1rem" />}
+            bullet={icon}
             title={<div className={style.time}>{time}</div>}
           >
             <h3>{position}</h3>
@@ -71,6 +41,19 @@ export const TimelineCustom = ({ body }: TTimelineCustom) => {
                 variant="outline"
                 onClick={() => {
                   toggle();
+                  if (isExist) {
+                    setDataCollapse(
+                      dataCollapse.filter((item) => item.id !== company)
+                    );
+                  } else {
+                    setDataCollapse((old) => [
+                      ...old,
+                      {
+                        id: company,
+                        isOpen: true,
+                      },
+                    ]);
+                  }
                 }}
                 leftSection={<IconEye size="1rem" />}
               >
@@ -78,8 +61,8 @@ export const TimelineCustom = ({ body }: TTimelineCustom) => {
               </Badge>
             </Group>
             <Collapse
-              in={opened}
-              transitionDuration={1000}
+              in={(isExist?.isOpen ?? false) && isExist?.id === company}
+              transitionDuration={700}
               transitionTimingFunction="linear"
             >
               {description.map((item) => (
