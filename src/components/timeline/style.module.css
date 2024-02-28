@@ -1,5 +1,9 @@
 .time {
   color: #999999;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: var(--mantine-primary-color-9);
+  }
 }
 
 h3 {
@@ -17,6 +21,10 @@ P {
 
 .badgeRoot {
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: var(--mantine-primary-color-9);
+  }
 }
 
 .description {

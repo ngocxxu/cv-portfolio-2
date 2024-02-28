@@ -1,8 +1,9 @@
-import { Badge, Collapse, Group, Timeline } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { IconEye } from "@tabler/icons-react";
-import { ReactNode, useState } from "react";
-import style from "./style.module.css";
+import { Badge, Collapse, Group, Timeline } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { IconEye } from '@tabler/icons-react';
+import { ReactNode, useState } from 'react';
+import style from './style.module.css';
+import { vars } from '../../main';
 
 type TTimelineCustom = {
   body: {
@@ -36,9 +37,14 @@ export const TimelineCustom = ({ body, icon }: TTimelineCustom) => {
             <Group>
               <p>{company}</p>
               <Badge
+                color={
+                  isExist?.isOpen
+                    ? vars.colors.primaryColors[9]
+                    : vars.colors.primaryColors[8]
+                }
                 classNames={{ root: style.badgeRoot }}
-                size="xs"
-                variant="outline"
+                size='xs'
+                variant='transparent'
                 onClick={() => {
                   toggle();
                   if (isExist) {
@@ -55,15 +61,15 @@ export const TimelineCustom = ({ body, icon }: TTimelineCustom) => {
                     ]);
                   }
                 }}
-                leftSection={<IconEye size="1rem" />}
+                leftSection={<IconEye size='1rem' />}
               >
-                View Detail
+                Detail
               </Badge>
             </Group>
             <Collapse
               in={(isExist?.isOpen ?? false) && isExist?.id === company}
               transitionDuration={700}
-              transitionTimingFunction="linear"
+              transitionTimingFunction='linear'
             >
               {description.map((item) => (
                 <div key={item} className={style.description}>

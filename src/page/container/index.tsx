@@ -1,8 +1,9 @@
-import { LeftSidebar } from "../../components/leftSidebar";
-import { RightSidebar } from "../../components/rightSidebar";
-import About from "../about";
-import Home from "../home";
-import Resume from "../resume";
+import { LeftSidebar } from '../../components/leftSidebar';
+import { RightSidebar } from '../../components/rightSidebar';
+import About from '../about';
+import Home from '../home';
+import MySkills from '../mySkills';
+import Resume from '../resume';
 
 export const ContainerPage = () => {
   return (
@@ -11,6 +12,7 @@ export const ContainerPage = () => {
       <Home />
       <About />
       <Resume />
+      <MySkills />
       <RightSidebar />
     </div>
   );

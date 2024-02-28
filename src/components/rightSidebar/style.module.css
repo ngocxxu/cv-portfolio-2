@@ -25,8 +25,8 @@
 
 .icon {
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
   &:hover {
-    transition: 0.3s;
     color: var(--mantine-primary-color-9);
   }
 }

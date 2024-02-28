@@ -1,6 +1,5 @@
-import { Tooltip } from "@mantine/core";
+import { Tooltip } from '@mantine/core';
 import {
-  IconAlignBoxRightStretch,
   IconBriefcase,
   IconCategory,
   IconHome,
@@ -8,44 +7,44 @@ import {
   IconMessage,
   IconTriangleSquareCircle,
   IconUser,
-} from "@tabler/icons-react";
-import { vars } from "../../main";
-import style from "./style.module.css";
-import { GlobalContext } from "../../context";
-import { useContext } from "react";
+} from '@tabler/icons-react';
+import { useContext } from 'react';
+import { GlobalContext } from '../../context';
+import { vars } from '../../main';
+import style from './style.module.css';
 
 const data = [
   {
     icon: <IconHome />,
-    title: "Introduce",
+    title: 'Introduce',
   },
   {
     icon: <IconUser />,
-    title: "About",
+    title: 'About',
   },
   {
     icon: <IconBriefcase />,
-    title: "Resume",
+    title: 'Resume',
   },
-  {
-    icon: <IconAlignBoxRightStretch />,
-    title: "Services",
-  },
+  // {
+  //   icon: <IconAlignBoxRightStretch />,
+  //   title: "Services",
+  // },
   {
     icon: <IconTriangleSquareCircle />,
-    title: "Skills",
+    title: 'My Skills',
   },
   {
     icon: <IconCategory />,
-    title: "Portfolio",
+    title: 'Portfolio',
   },
   {
     icon: <IconMessage />,
-    title: "Testimonial",
+    title: 'Testimonial',
   },
   {
     icon: <IconMail />,
-    title: "Contact",
+    title: 'Contact',
   },
 ];
 
@@ -56,9 +55,9 @@ export const RightSidebar = () => {
     if (element) {
       // Ensure element exists before scrolling
       element.scrollIntoView({
-        behavior: "smooth", // Enable smooth scrolling
-        block: "start", // Align to top edge of element
-        inline: "nearest", // Snap to nearest horizontal position
+        behavior: 'smooth', // Enable smooth scrolling
+        block: 'start', // Align to top edge of element
+        inline: 'nearest', // Snap to nearest horizontal position
       });
     } else {
       console.warn(`Element with ID '${sectionId}' not found.`); // Inform user if element not found
@@ -76,10 +75,10 @@ export const RightSidebar = () => {
             key={title}
             classNames={{ tooltip: style.toolTip }}
             withArrow
-            arrowPosition="side"
-            position="left"
+            arrowPosition='side'
+            position='left'
             label={title}
-            transitionProps={{ duration: 300, transition: "rotate-left" }}
+            transitionProps={{ duration: 300, transition: 'rotate-left' }}
           >
             <div
               style={{
