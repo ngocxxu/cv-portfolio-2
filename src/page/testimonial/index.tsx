@@ -1,13 +1,13 @@
 import { Box, Group, Stack, Text } from "@mantine/core";
-import { IconUser } from "@tabler/icons-react";
+import { IconMessage } from "@tabler/icons-react";
+import { useMemo } from "react";
 import { CarouselCustom } from "../../components/carousel";
 import { SectionItem } from "../../components/sectionItem";
 import { IconLeftQuote } from "../../components/svg/IconLeftQuote";
 import { IconRightQuote } from "../../components/svg/IconRightQuote";
+import { DataUser } from "../../data";
 import { vars } from "../../main";
 import style from "./style.module.css";
-import { useMemo } from "react";
-import { DataUser } from "../../data";
 
 const Testimonial = () => {
   const body = useMemo(
@@ -15,13 +15,13 @@ const Testimonial = () => {
       DataUser.testiminial.quotes.map(({ author, content, id }) => ({
         slide: 1,
         contents: (
-          <Box key={id} className={style.box} p={30} px={60}>
+          <Box key={id} className={style.box} p={30} px={60} mr={10}>
             <Stack align="center">
               <IconLeftQuote
                 className={style.icon1}
                 fill={vars.colors.primaryColors[9]}
               />
-              <Text size="22px" my="md">
+              <Text color="#fff" size="22px" my="md">
                 {content}
               </Text>
               <Group w="100%" justify="space-between">
@@ -44,7 +44,7 @@ const Testimonial = () => {
   return (
     <SectionItem
       title="Testimonial"
-      icon={<IconUser size="0.9rem" style={{ marginRight: "5px" }} />}
+      icon={<IconMessage size="0.9rem" style={{ marginRight: "5px" }} />}
     >
       <div className={style.bigText}>
         Quotes fuel my <span>inspiration</span>

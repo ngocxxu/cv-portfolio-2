@@ -1,0 +1,46 @@
+.bigText {
+  font-size: 48px;
+  line-height: 60px;
+  color: #fff;
+  font-weight: 300;
+  margin-bottom: 33px;
+}
+
+.bigText > span {
+  color: var(--mantine-primary-color-9);
+}
+
+.themeBtn {
+  background: var(--mantine-primary-color-9);
+  color: #000000;
+  display: block;
+  text-align: center;
+  padding: 11px 58px 10px 58px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 30px;
+  justify-content: center;
+  text-transform: uppercase;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 2px solid var(--mantine-primary-color-9);
+  &:hover {
+    color: var(--mantine-primary-color-9);
+    border-color: var(--mantine-primary-color-9);
+    background-color: #1f1f1f;
+  }
+}
+
+.label {
+  color: #fff;
+}
+
+.input {
+  color: #fff;
+  font-size: 1.3rem;
+
+  &::placeholder {
+    color: #999;
+  }
+}
