@@ -16,6 +16,29 @@
 }
 
 .box {
-  border: 1px solid #999999;
+  border: 1px solid #565656;
   border-radius: 1rem;
+}
+
+.icon1 {
+  margin-right: auto;
+}
+
+.control {
+  background-color: #1f1f1f;
+  border: #565656;
+}
+
+.controls {
+  transition: opacity 150ms ease;
+  opacity: 0;
+}
+
+.root {
+  cursor: grab;
+  &:hover {
+    .controls {
+      opacity: 1;
+    }
+  }
 }

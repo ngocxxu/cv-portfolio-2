@@ -1,43 +1,46 @@
+import { Box, Group, Stack, Text } from "@mantine/core";
 import { IconUser } from "@tabler/icons-react";
-import { SectionItem } from "../../components/sectionItem";
-import style from "./style.module.css";
 import { CarouselCustom } from "../../components/carousel";
-import { Anchor, Avatar, Box, Group, Stack, Text } from "@mantine/core";
-
-const body = [
-  {
-    slide: 1,
-    contents: (
-      <Box className={style.box} p={30} px={60}>
-        <Group>
-          <Avatar
-            src={`https://i.pravatar.cc/150?u=a${Math.random()}`}
-            radius="xl"
-          />
-          <Stack gap={5}>
-            <Text size="sm" fw={700} style={{ lineHeight: 1 }}>
-              Mantine
-            </Text>
-            <Anchor
-              href="https://twitter.com/mantinedev"
-              c="dimmed"
-              size="xs"
-              style={{ lineHeight: 1 }}
-            >
-              @mantinedev
-            </Anchor>
-          </Stack>
-        </Group>
-        <Text size="sm" mt="md">
-          Customizable React components and hooks library with focus on
-          usability, accessibility and developer experience
-        </Text>
-      </Box>
-    ),
-  },
-];
+import { SectionItem } from "../../components/sectionItem";
+import { IconLeftQuote } from "../../components/svg/IconLeftQuote";
+import { IconRightQuote } from "../../components/svg/IconRightQuote";
+import { vars } from "../../main";
+import style from "./style.module.css";
+import { useMemo } from "react";
+import { DataUser } from "../../data";
 
 const Testimonial = () => {
+  const body = useMemo(
+    () =>
+      DataUser.testiminial.quotes.map(({ author, content, id }) => ({
+        slide: 1,
+        contents: (
+          <Box key={id} className={style.box} p={30} px={60}>
+            <Stack align="center">
+              <IconLeftQuote
+                className={style.icon1}
+                fill={vars.colors.primaryColors[9]}
+              />
+              <Text size="22px" my="md">
+                {content}
+              </Text>
+              <Group w="100%" justify="space-between">
+                <Text
+                  c="dimmed"
+                  size="md"
+                  style={{ lineHeight: 1, fontStyle: "italic" }}
+                >
+                  {author}
+                </Text>
+                <IconRightQuote fill={vars.colors.primaryColors[9]} />
+              </Group>
+            </Stack>
+          </Box>
+        ),
+      })),
+    []
+  );
+
   return (
     <SectionItem
       title="Testimonial"
@@ -47,7 +50,12 @@ const Testimonial = () => {
         Quotes fuel my <span>inspiration</span>
       </div>
 
-      <CarouselCustom body={body} />
+      <CarouselCustom
+        classNameControl={style.control}
+        classNameControls={style.controls}
+        classNameRoot={style.root}
+        body={body}
+      />
     </SectionItem>
   );
 };
