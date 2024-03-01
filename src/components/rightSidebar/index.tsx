@@ -1,4 +1,4 @@
-import { Tooltip } from '@mantine/core';
+import { Tooltip } from "@mantine/core";
 import {
   IconBriefcase,
   IconCategory,
@@ -7,24 +7,25 @@ import {
   IconMessage,
   IconTriangleSquareCircle,
   IconUser,
-} from '@tabler/icons-react';
-import { useContext } from 'react';
-import { GlobalContext } from '../../context';
-import { vars } from '../../main';
-import style from './style.module.css';
+} from "@tabler/icons-react";
+import { useContext } from "react";
+import { GlobalContext } from "../../context";
+import { vars } from "../../main";
+import style from "./style.module.css";
+import { onClickHeaderItem } from "../../utils/helpers";
 
 const data = [
   {
     icon: <IconHome />,
-    title: 'Introduce',
+    title: "Introduce",
   },
   {
     icon: <IconUser />,
-    title: 'About',
+    title: "About",
   },
   {
     icon: <IconBriefcase />,
-    title: 'Resume',
+    title: "Resume",
   },
   // {
   //   icon: <IconAlignBoxRightStretch />,
@@ -32,37 +33,24 @@ const data = [
   // },
   {
     icon: <IconTriangleSquareCircle />,
-    title: 'My Skills',
+    title: "My Skills",
   },
   {
     icon: <IconCategory />,
-    title: 'Portfolio',
+    title: "Portfolio",
   },
   {
     icon: <IconMessage />,
-    title: 'Testimonial',
+    title: "Testimonial",
   },
   {
     icon: <IconMail />,
-    title: 'Contact',
+    title: "Contact",
   },
 ];
 
 export const RightSidebar = () => {
   const state = useContext(GlobalContext);
-  const onClickHeaderItem = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      // Ensure element exists before scrolling
-      element.scrollIntoView({
-        behavior: 'smooth', // Enable smooth scrolling
-        block: 'start', // Align to top edge of element
-        inline: 'nearest', // Snap to nearest horizontal position
-      });
-    } else {
-      console.warn(`Element with ID '${sectionId}' not found.`); // Inform user if element not found
-    }
-  };
 
   return (
     <div className={style.rightSidebar}>
@@ -75,10 +63,10 @@ export const RightSidebar = () => {
             key={title}
             classNames={{ tooltip: style.toolTip }}
             withArrow
-            arrowPosition='side'
-            position='left'
+            arrowPosition="side"
+            position="left"
             label={title}
-            transitionProps={{ duration: 300, transition: 'rotate-left' }}
+            transitionProps={{ duration: 300, transition: "rotate-left" }}
           >
             <div
               style={{

@@ -6,6 +6,7 @@ import Square from "../../assets/logo/round-text.png";
 import { SectionItem } from "../../components/sectionItem";
 import { DataUser } from "../../data";
 import style from "./style.module.css";
+import { onClickHeaderItem } from "../../utils/helpers";
 
 const Home = () => {
   const startDate = new Date(2021, 5); // June (0-indexed month)
@@ -28,7 +29,10 @@ const Home = () => {
         />
       </div>
       <p className={style.smallText}>{DataUser.home.smallText}</p>
-      <a className={style.rotate}>
+      <a
+        className={style.rotate}
+        onClick={() => onClickHeaderItem("Portfolio")}
+      >
         <img className={style.image} src={Square} alt="round-text" />
         <IconArrowDown size="2.5rem" className={style.arrow} />
       </a>
