@@ -12,8 +12,8 @@ import style from "./style.module.css";
 const Testimonial = () => {
   const body = useMemo(
     () =>
-      DataUser.testiminial.quotes.map(({ author, content, id }) => ({
-        slide: 1,
+      DataUser.testiminial.quotes.map(({ author, content, id }, index) => ({
+        slide: index,
         contents: (
           <Box key={id} className={style.box} p={30} px={60} mr={10}>
             <Stack align="center">
@@ -56,6 +56,17 @@ const Testimonial = () => {
         classNameRoot={style.root}
         body={body}
       />
+
+      <iframe
+        className={style.video}
+        width="100%"
+        height="400px"
+        src="https://www.youtube.com/embed/F5-qkgfBeuU"
+        title="Comfort Will Ruin Your Life"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      ></iframe>
     </SectionItem>
   );
 };

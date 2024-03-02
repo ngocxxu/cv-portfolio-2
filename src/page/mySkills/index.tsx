@@ -25,11 +25,14 @@ const skills = [
     detail: [
       "Router",
       "Redux-thunk/saga",
+      "Mobx",
       "Hooks",
       "Styled Component",
       "Basic React Spring",
       "Formik/Yup",
       "React DnD",
+      "Tanstack-Query",
+      "Tanstack-Table",
     ],
   },
   {
@@ -157,7 +160,7 @@ const MySkills = () => {
                 wrap="wrap"
               >
                 {detail.map((item) => (
-                  <div className={style.text}>
+                  <div key={item} className={style.text}>
                     <Badge
                       classNames={{ root: style.root }}
                       key={item}
