@@ -1,8 +1,9 @@
 import { BackgroundImage, Button } from "@mantine/core";
 import { IconCategory } from "@tabler/icons-react";
 import { SectionItem } from "../../components/sectionItem";
-import style from "./style.module.css";
 import { DataUser } from "../../data";
+import style from "./style.module.css";
+// import { useInView } from "../../assets/hooks/useInView";
 
 const Portfolio = () => {
   return (
