@@ -42,7 +42,7 @@ const Home = () => {
             <CountUp
               decimals={1}
               decimal=","
-              end={Number(yearsWorked) + 10}
+              end={Number(yearsWorked)}
               duration={20}
             />
             +

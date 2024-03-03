@@ -21,7 +21,7 @@ export const CarouselCustom = ({
   classNameControls,
   classNameRoot,
 }: TCarouselCustom) => {
-  const autoplay = useRef(Autoplay({ delay: 3000 }));
+  const autoplay = useRef(Autoplay({ delay: 5000 }));
   return (
     <Carousel
       controlSize={14}

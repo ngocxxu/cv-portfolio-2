@@ -17,7 +17,7 @@ const Portfolio = () => {
       <div className={style.list}>
         {DataUser.portfolio.coding.map(
           ({ demo, frontend, backend, image, title }) => (
-            <div className={style.item}>
+            <div key={title} className={style.item}>
               <BackgroundImage
                 src={image}
                 radius="sm"

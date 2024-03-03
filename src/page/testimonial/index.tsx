@@ -1,15 +1,18 @@
-import { Box, Group, Stack, Text } from "@mantine/core";
+import { AspectRatio, Box, Modal, Stack, Text } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import { IconMessage } from "@tabler/icons-react";
 import { useMemo } from "react";
+import Hiking from "../../assets/projects/hiking.jpg";
 import { CarouselCustom } from "../../components/carousel";
 import { SectionItem } from "../../components/sectionItem";
 import { IconLeftQuote } from "../../components/svg/IconLeftQuote";
-import { IconRightQuote } from "../../components/svg/IconRightQuote";
 import { DataUser } from "../../data";
 import { vars } from "../../main";
 import style from "./style.module.css";
 
 const Testimonial = () => {
+  const [opened, { open, close }] = useDisclosure(false);
+
   const body = useMemo(
     () =>
       DataUser.testiminial.quotes.map(({ author, content, id }, index) => ({
@@ -21,19 +24,17 @@ const Testimonial = () => {
                 className={style.icon1}
                 fill={vars.colors.primaryColors[9]}
               />
-              <Text color="#fff" size="22px" my="md">
+              <Text color="#fff" size="22px" mt="xs" mb="md">
                 {content}
               </Text>
-              <Group w="100%" justify="space-between">
-                <Text
-                  c="dimmed"
-                  size="md"
-                  style={{ lineHeight: 1, fontStyle: "italic" }}
-                >
-                  {author}
-                </Text>
-                <IconRightQuote fill={vars.colors.primaryColors[9]} />
-              </Group>
+              <Text
+                mr="auto"
+                c="dimmed"
+                size="md"
+                style={{ lineHeight: 1, fontStyle: "italic" }}
+              >
+                {author}
+              </Text>
             </Stack>
           </Box>
         ),
@@ -57,16 +58,31 @@ const Testimonial = () => {
         body={body}
       />
 
-      <iframe
-        className={style.video}
-        width="100%"
-        height="400px"
-        src="https://www.youtube.com/embed/F5-qkgfBeuU"
-        title="Comfort Will Ruin Your Life"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
+      <AspectRatio onClick={open} ratio={16 / 9} mx="auto">
+        <div className={style["video-play-button"]} onClick={open}>
+          <span></span>
+        </div>
+        <img className={style.img} src={Hiking} alt="hiking" />
+      </AspectRatio>
+
+      <Modal
+        opened={opened}
+        onClose={close}
+        size="xl"
+        withCloseButton={false}
+        centered
+      >
+        <AspectRatio ratio={16 / 9}>
+          <iframe
+            className={style.video}
+            src="https://www.youtube.com/embed/F5-qkgfBeuU"
+            title="Comfort Will Ruin Your Life"
+            style={{ border: 0 }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </AspectRatio>
+      </Modal>
     </SectionItem>
   );
 };

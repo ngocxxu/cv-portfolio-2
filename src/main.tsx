@@ -6,6 +6,7 @@ import { MantineProvider, createTheme } from "@mantine/core";
 import "./index.css";
 import { themeToVars } from "@mantine/vanilla-extract";
 import GlobalProvider from "./context/index.tsx";
+import { Notifications } from "@mantine/notifications";
 
 const theme = createTheme({
   primaryColor: "primary-color",
@@ -37,6 +38,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <GlobalProvider>
       <MantineProvider theme={theme}>
         <BrowserRouter>
+          <Notifications />
           <App />
         </BrowserRouter>
       </MantineProvider>

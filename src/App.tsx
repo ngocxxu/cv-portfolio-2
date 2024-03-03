@@ -1,6 +1,6 @@
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
-// Import the functions you need from the SDKs you need
+import "@mantine/notifications/styles.css";
 import { initializeApp } from "firebase/app";
 import { useRoutes } from "react-router-dom";
 import { ContainerPage } from "./page/container";
