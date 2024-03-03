@@ -1,6 +1,5 @@
 import { Badge, Container } from "@mantine/core";
-import { useInViewport } from "@mantine/hooks";
-import { ReactNode, useContext, useEffect } from "react";
+import { ReactNode, useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "../../context";
 import style from "./style.module.css";
 
@@ -12,14 +11,38 @@ type TSectionItemProps = {
 
 export const SectionItem = ({ children, title, icon }: TSectionItemProps) => {
   const state = useContext(GlobalContext);
-  const { ref, inViewport } = useInViewport();
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (inViewport && state) {
-      state.setViewPortState({ id: title, isView: inViewport });
+    // create and do action when intersecting is true
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && state) {
+          if (!sectionRef.current) return;
+          state.setViewPortState({ id: title, isView: entry.isIntersecting });
+        }
+      });
+    };
+
+    // threshold config height toggled for viewport
+    const observer = new IntersectionObserver(observerCallback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
+
+    return () => {
+      if (sectionRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        observer.unobserve(sectionRef.current);
+      }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inViewport]);
+  }, [title]);
 
   return (
     <section id={title} className={style.section}>
@@ -33,7 +56,7 @@ export const SectionItem = ({ children, title, icon }: TSectionItemProps) => {
           >
             {title}
           </Badge>
-          <div ref={ref}>{children}</div>
+          <div ref={sectionRef}>{children}</div>
         </div>
       </Container>
     </section>

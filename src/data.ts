@@ -104,6 +104,7 @@ export const DataUser = {
   portfolio: {
     coding: [
       {
+        imgTitle: "vocab",
         image:
           "https://res.cloudinary.com/ngocxxu/image/upload/v1709403786/portfolio-2/vocab-manage_rrjg9e.jpg",
         title: "Vocabulary Management",
@@ -115,6 +116,7 @@ export const DataUser = {
         demo: "https://vocab-management.web.app/",
       },
       {
+        imgTitle: "prowe",
         image:
           "https://res.cloudinary.com/ngocxxu/image/upload/v1709398604/portfolio-2/prowe_x0jry8.jpg",
         title: "Prowe Electronic",

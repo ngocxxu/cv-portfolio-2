@@ -28,7 +28,6 @@ const skills = [
       "Mobx",
       "Hooks",
       "Styled Component",
-      "Basic React Spring",
       "Formik/Yup",
       "React DnD",
       "Tanstack-Query",
