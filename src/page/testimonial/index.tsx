@@ -2,7 +2,7 @@ import { AspectRatio, Box, Modal, Stack, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconMessage } from "@tabler/icons-react";
 import { useMemo } from "react";
-import Hiking from "../../assets/projects/hiking.jpg";
+import Hiking from "../../assets/projects/hiking.webp";
 import { Animation } from "../../components/animation";
 import { CarouselCustom } from "../../components/carousel";
 import { SectionItem } from "../../components/sectionItem";

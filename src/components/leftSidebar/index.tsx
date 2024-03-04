@@ -6,7 +6,7 @@ import {
   IconMail,
 } from "@tabler/icons-react";
 import { format } from "date-fns";
-import Me from "../../assets/logo/me.jpg";
+import Me from "../../assets/logo/me.webp";
 import { DataUser } from "../../data";
 import style from "./style.module.css";
 

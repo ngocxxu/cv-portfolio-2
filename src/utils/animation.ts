@@ -1,4 +1,4 @@
-export const transition1 = { duration: 0.3, delay: 0.4, ease: "easeIn" };
+export const transition1 = { duration: 0.4, delay: 0.4, ease: "easeIn" };
 export const transition2 = { duration: 0.3, delay: 0.2, ease: "easeIn" };
 
 export const hiddenVisible = {

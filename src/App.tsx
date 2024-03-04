@@ -4,6 +4,9 @@ import "@mantine/notifications/styles.css";
 import { initializeApp } from "firebase/app";
 import { useRoutes } from "react-router-dom";
 import { ContainerPage } from "./page/container";
+import { Suspense, lazy } from "react";
+import { ErrorTemplate } from "./page/error";
+import { Flex, Loader } from "@mantine/core";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,8 +23,33 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 
+const LayoutLazy = lazy(() => import("./page/layout"));
+
 function App() {
-  const routes = [{ path: "/", element: <ContainerPage /> }];
+  const routes = [
+    {
+      element: (
+        <Suspense
+          fallback={
+            <Flex
+              h="100vh"
+              gap="md"
+              justify="center"
+              align="center"
+              direction="row"
+              wrap="wrap"
+            >
+              <Loader size="xl" type="bars" />
+            </Flex>
+          }
+        >
+          <LayoutLazy />
+        </Suspense>
+      ),
+      children: [{ path: "/", element: <ContainerPage /> }],
+    },
+    { path: "*", element: <ErrorTemplate /> },
+  ];
 
   const element = useRoutes(routes);
 
