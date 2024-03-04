@@ -1,9 +1,10 @@
 import { Badge, Container } from "@mantine/core";
 import { ReactNode, useContext, useEffect, useRef } from "react";
-// import { useInView } from "../../assets/hooks/useInView";
 import { GlobalContext } from "../../context";
 import style from "./style.module.css";
 import { useInView } from "framer-motion";
+import { Animation } from "../animation";
+import { hiddenVisible } from "../../utils/animation";
 
 type TSectionItemProps = {
   children: ReactNode;
@@ -27,16 +28,17 @@ export const SectionItem = ({ children, title, icon }: TSectionItemProps) => {
     <section id={title} className={style.section}>
       <Container size="lg">
         <div className={style.content}>
-          <Badge
-            ref={ref}
-            leftSection={icon}
-            className={style.badge}
-            variant="outline"
-            size="xl"
-          >
-            {title}
-          </Badge>
-          <div>{children}</div>
+          <Animation width="100%" variants={hiddenVisible}>
+            <Badge
+              leftSection={icon}
+              className={style.badge}
+              variant="outline"
+              size="xl"
+            >
+              {title}
+            </Badge>
+          </Animation>
+          <div ref={ref}>{children}</div>
         </div>
       </Container>
     </section>

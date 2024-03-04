@@ -17,6 +17,8 @@ import {
 } from "@tabler/icons-react";
 import { SectionItem } from "../../components/sectionItem";
 import style from "./style.module.css";
+import { Animation } from "../../components/animation";
+import { hiddenVisible, hiddenVisibleSkills } from "../../utils/animation";
 
 const skills = [
   {
@@ -135,44 +137,49 @@ const MySkills = () => {
         />
       }
     >
-      <div className={style.bigText}>
-        My <span>Advantage</span>
-      </div>
+      <Animation variants={hiddenVisible}>
+        <div className={style.bigText}>
+          My <span>Advantage</span>
+        </div>
+      </Animation>
+
       <div className={style.list}>
         <div className={style.item}>
           {skills.map(({ detail, icon, title }) => (
             <Box mb={30} key={title}>
-              <Badge
-                mb={15}
-                leftSection={icon}
-                variant="light"
-                size="xl"
-                radius="xs"
-              >
-                {title}
-              </Badge>
-              <Flex
-                gap="md"
-                justify="flex-start"
-                align="flex-start"
-                direction="row"
-                wrap="wrap"
-              >
-                {detail.map((item) => (
-                  <div key={item} className={style.text}>
-                    <Badge
-                      classNames={{ root: style.root }}
-                      key={item}
-                      color="#999999"
-                      variant="light"
-                      size="lg"
-                      radius="xs"
-                    >
-                      {item}
-                    </Badge>
-                  </div>
-                ))}
-              </Flex>
+              <Animation variants={hiddenVisibleSkills}>
+                <Badge
+                  mb={15}
+                  leftSection={icon}
+                  variant="light"
+                  size="xl"
+                  radius="xs"
+                >
+                  {title}
+                </Badge>
+                <Flex
+                  gap="md"
+                  justify="flex-start"
+                  align="flex-start"
+                  direction="row"
+                  wrap="wrap"
+                >
+                  {detail.map((item) => (
+                    <div key={item} className={style.text}>
+                      <Badge
+                        classNames={{ root: style.root }}
+                        key={item}
+                        color="#999999"
+                        variant="light"
+                        size="lg"
+                        radius="xs"
+                      >
+                        {item}
+                      </Badge>
+                    </div>
+                  ))}
+                </Flex>
+              </Animation>
             </Box>
           ))}
         </div>

@@ -4,6 +4,7 @@ import { SectionItem } from "../../components/sectionItem";
 import { DataUser } from "../../data";
 import style from "./style.module.css";
 import { Animation } from "../../components/animation";
+import { hiddenVisible } from "../../utils/animation";
 // import { useInView } from "../../assets/hooks/useInView";
 
 const Portfolio = () => {
@@ -12,15 +13,17 @@ const Portfolio = () => {
       title="Portfolio"
       icon={<IconCategory size="0.9rem" style={{ marginRight: "5px" }} />}
     >
-      <div className={style.bigText}>
-        Featured <span>Projects</span>
-      </div>
+      <Animation variants={hiddenVisible}>
+        <div className={style.bigText}>
+          Featured <span>Projects</span>
+        </div>
+      </Animation>
 
       <div className={style.list}>
         {DataUser.portfolio.coding.map(
           ({ demo, frontend, backend, image, title }) => (
             <div key={title} className={style.item}>
-              <Animation width="100%">
+              <Animation width="100%" variants={hiddenVisible}>
                 <BackgroundImage
                   src={image}
                   radius="sm"

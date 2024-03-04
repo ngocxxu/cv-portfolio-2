@@ -7,6 +7,8 @@ import { SectionItem } from "../../components/sectionItem";
 import { DataUser } from "../../data";
 import style from "./style.module.css";
 import { onClickHeaderItem } from "../../utils/helpers";
+import { Animation } from "../../components/animation";
+import { hiddenVisible } from "../../utils/animation";
 
 const Home = () => {
   const startDate = new Date(2021, 5); // June (0-indexed month)
@@ -19,43 +21,59 @@ const Home = () => {
       title="Introduce"
       icon={<IconHome size="0.9rem" style={{ marginRight: "5px" }} />}
     >
-      <div className={style.bigText}>
-        <TypeAnimation
-          sequence={[DataUser.home.bigText, 1000, DataUser.home.bigText2, 1000]}
-          speed={30}
-          deletionSpeed={70}
-          repeat={Infinity}
-          className={style.title}
-        />
-      </div>
-      <p className={style.smallText}>{DataUser.home.smallText}</p>
-      <a
-        className={style.rotate}
-        onClick={() => onClickHeaderItem("Portfolio")}
-      >
-        <img className={style.image} src={Square} alt="round-text" />
-        <IconArrowDown size="2.5rem" className={style.arrow} />
-      </a>
-      <div className={style.statistic}>
-        <div>
-          <div>
-            <CountUp
-              decimals={1}
-              decimal=","
-              end={Number(yearsWorked)}
-              duration={20}
-            />
-            +
-          </div>
-          <p>YEARS OF EXPERIENCE</p>
+      <Animation variants={hiddenVisible}>
+        <div className={style.bigText}>
+          <TypeAnimation
+            sequence={[
+              DataUser.home.bigText,
+              1000,
+              DataUser.home.bigText2,
+              1000,
+            ]}
+            speed={30}
+            deletionSpeed={70}
+            repeat={Infinity}
+            className={style.title}
+          />
         </div>
-        <div>
+      </Animation>
+
+      <Animation variants={hiddenVisible}>
+        <p className={style.smallText}>{DataUser.home.smallText}</p>
+      </Animation>
+
+      <Animation variants={hiddenVisible}>
+        <a
+          className={style.rotate}
+          onClick={() => onClickHeaderItem("Portfolio")}
+        >
+          <img className={style.image} src={Square} alt="round-text" />
+          <IconArrowDown size="2.5rem" className={style.arrow} />
+        </a>
+      </Animation>
+
+      <Animation variants={hiddenVisible}>
+        <div className={style.statistic}>
           <div>
-            <CountUp end={10} duration={20} />+
+            <div>
+              <CountUp
+                decimals={1}
+                decimal=","
+                end={Number(yearsWorked)}
+                duration={20}
+              />
+              +
+            </div>
+            <p>YEARS OF EXPERIENCE</p>
           </div>
-          <p>PROJECTS COMPLETED</p>
+          <div>
+            <div>
+              <CountUp end={10} duration={20} />+
+            </div>
+            <p>PROJECTS COMPLETED</p>
+          </div>
         </div>
-      </div>
+      </Animation>
     </SectionItem>
   );
 };

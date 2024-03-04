@@ -3,11 +3,13 @@ import { useDisclosure } from "@mantine/hooks";
 import { IconMessage } from "@tabler/icons-react";
 import { useMemo } from "react";
 import Hiking from "../../assets/projects/hiking.jpg";
+import { Animation } from "../../components/animation";
 import { CarouselCustom } from "../../components/carousel";
 import { SectionItem } from "../../components/sectionItem";
 import { IconLeftQuote } from "../../components/svg/IconLeftQuote";
 import { DataUser } from "../../data";
 import { vars } from "../../main";
+import { hiddenVisible } from "../../utils/animation";
 import style from "./style.module.css";
 
 const Testimonial = () => {
@@ -47,25 +49,32 @@ const Testimonial = () => {
       title="Testimonial"
       icon={<IconMessage size="0.9rem" style={{ marginRight: "5px" }} />}
     >
-      <div className={style.bigText}>
-        Quotes fuel my <span>inspiration</span>
-      </div>
-
-      <CarouselCustom
-        classNameControl={style.control}
-        classNameControls={style.controls}
-        classNameRoot={style.root}
-        body={body}
-      />
-
-      <AspectRatio onClick={open} ratio={16 / 9} mx="auto">
-        <div className={style["video-play-button"]} onClick={open}>
-          <span></span>
+      <Animation variants={hiddenVisible}>
+        <div className={style.bigText}>
+          Quotes fuel my <span>inspiration</span>
         </div>
-        <img className={style.img} src={Hiking} alt="hiking" />
-      </AspectRatio>
+      </Animation>
+
+      <Animation variants={hiddenVisible}>
+        <CarouselCustom
+          classNameControl={style.control}
+          classNameControls={style.controls}
+          classNameRoot={style.root}
+          body={body}
+        />
+      </Animation>
+
+      <Animation variants={hiddenVisible}>
+        <AspectRatio onClick={open} ratio={16 / 9} mx="auto">
+          <div className={style["video-play-button"]} onClick={open}>
+            <span></span>
+          </div>
+          <img className={style.img} src={Hiking} alt="hiking" />
+        </AspectRatio>
+      </Animation>
 
       <Modal
+        transitionProps={{ duration: 500, transition: "slide-up" }}
         opened={opened}
         onClose={close}
         size="xl"
