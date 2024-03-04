@@ -3,6 +3,7 @@ import { IconCategory } from "@tabler/icons-react";
 import { SectionItem } from "../../components/sectionItem";
 import { DataUser } from "../../data";
 import style from "./style.module.css";
+import { Animation } from "../../components/animation";
 // import { useInView } from "../../assets/hooks/useInView";
 
 const Portfolio = () => {
@@ -19,45 +20,47 @@ const Portfolio = () => {
         {DataUser.portfolio.coding.map(
           ({ demo, frontend, backend, image, title }) => (
             <div key={title} className={style.item}>
-              <BackgroundImage
-                src={image}
-                radius="sm"
-                classNames={{
-                  root: style.inner,
-                }}
-              >
-                <div className={style.button}>
-                  <Button
-                    onClick={() => window.open(frontend, "_blank")}
-                    classNames={{ root: style.root }}
-                    variant="filled"
-                    radius="xl"
-                  >
-                    Frontend
-                  </Button>
-                  {backend && (
+              <Animation width="100%">
+                <BackgroundImage
+                  src={image}
+                  radius="sm"
+                  classNames={{
+                    root: style.inner,
+                  }}
+                >
+                  <div className={style.button}>
                     <Button
-                      onClick={() => window.open(backend, "_blank")}
+                      onClick={() => window.open(frontend, "_blank")}
                       classNames={{ root: style.root }}
                       variant="filled"
                       radius="xl"
                     >
-                      Backend
+                      Frontend
                     </Button>
-                  )}
-                  <Button
-                    onClick={() => window.open(demo, "_blank")}
-                    classNames={{ root: style.root }}
-                    variant="filled"
-                    radius="xl"
-                  >
-                    Demo
-                  </Button>
-                </div>
-              </BackgroundImage>
-              <h3 className={style.h3}>
-                <span className={style.span}>{title}</span>
-              </h3>
+                    {backend && (
+                      <Button
+                        onClick={() => window.open(backend, "_blank")}
+                        classNames={{ root: style.root }}
+                        variant="filled"
+                        radius="xl"
+                      >
+                        Backend
+                      </Button>
+                    )}
+                    <Button
+                      onClick={() => window.open(demo, "_blank")}
+                      classNames={{ root: style.root }}
+                      variant="filled"
+                      radius="xl"
+                    >
+                      Demo
+                    </Button>
+                  </div>
+                </BackgroundImage>
+                <h3 className={style.h3}>
+                  <span className={style.span}>{title}</span>
+                </h3>
+              </Animation>
             </div>
           )
         )}
