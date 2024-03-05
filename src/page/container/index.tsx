@@ -1,3 +1,4 @@
+import { Area } from "../../components/area";
 import { LeftSidebar } from "../../components/leftSidebar";
 import { MiniRightSideBar } from "../../components/miniRightSideBar";
 import { RightSidebar } from "../../components/rightSidebar";
@@ -11,17 +12,23 @@ import Testimonial from "../testimonial";
 
 export const ContainerPage = () => {
   return (
-    <div>
-      <MiniRightSideBar />
-      <LeftSidebar />
-      <Home />
-      <About />
-      <Resume />
-      <MySkills />
-      <Portfolio />
-      <Testimonial />
-      <Contact />
-      <RightSidebar />
-    </div>
+    <>
+      <div>
+        <MiniRightSideBar />
+        <LeftSidebar />
+
+        <Area>
+          <Home />
+        </Area>
+
+        <About />
+        <Resume />
+        <MySkills />
+        <Portfolio />
+        <Testimonial />
+        <Contact />
+        <RightSidebar />
+      </div>
+    </>
   );
 };
