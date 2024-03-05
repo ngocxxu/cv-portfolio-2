@@ -16,11 +16,7 @@ export const ContainerPage = () => {
       <div>
         <MiniRightSideBar />
         <LeftSidebar />
-
-        <Area>
-          <Home />
-        </Area>
-
+        <Home />
         <About />
         <Resume />
         <MySkills />
@@ -29,6 +25,7 @@ export const ContainerPage = () => {
         <Contact />
         <RightSidebar />
       </div>
+      <Area />
     </>
   );
 };

@@ -1,10 +1,8 @@
-import { ReactNode } from "react";
 import style from "./style.module.css";
 
-export const Area = ({ children }: { children: ReactNode }) => {
+export const Area = () => {
   return (
     <>
-      {children}
       <div className={style.area}>
         <ul className={style.circles}>
           <li></li>
