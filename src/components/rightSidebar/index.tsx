@@ -11,8 +11,8 @@ import {
 import { useContext } from "react";
 import { GlobalContext } from "../../context";
 import { vars } from "../../main";
-import style from "./style.module.css";
 import { onClickHeaderItem } from "../../utils/helpers";
+import style from "./style.module.css";
 
 const data = [
   {
@@ -27,10 +27,6 @@ const data = [
     icon: <IconBriefcase />,
     title: "Resume",
   },
-  // {
-  //   icon: <IconAlignBoxRightStretch />,
-  //   title: "Services",
-  // },
   {
     icon: <IconTriangleSquareCircle />,
     title: "My Skills",

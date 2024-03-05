@@ -19,6 +19,12 @@
   }
 }
 
+@media (max-width: 1220px) {
+  .rightSidebar {
+    display: none;
+  }
+}
+
 .toolTip {
   background-color: #575757;
 }

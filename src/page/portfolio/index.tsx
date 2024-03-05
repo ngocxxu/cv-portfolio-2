@@ -19,7 +19,7 @@ const Portfolio = () => {
         </div>
       </Animation>
 
-      <div className={style.list}>
+      <div>
         {DataUser.portfolio.coding.map(
           ({ demo, frontend, backend, image, title }) => (
             <div key={title} className={style.item}>
