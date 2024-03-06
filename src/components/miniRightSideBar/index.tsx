@@ -51,46 +51,53 @@ export const MiniRightSideBar = () => {
   const state = useContext(GlobalContext);
 
   return (
-    <div className={style.rightSidebar}>
-      <Menu
-        onClose={toggle}
-        shadow="md"
-        position="bottom-end"
-        transitionProps={{ duration: 300, transition: "pop" }}
-      >
-        <Menu.Target>
-          <Burger
-            color="#fff"
-            opened={opened}
-            onClick={toggle}
-            aria-label="Toggle navigation"
-          />
-        </Menu.Target>
+    <>
+      {state?.viewPortState.isView ? (
+        <div className={style.rightSidebar}>
+          <Menu
+            onClose={toggle}
+            shadow="md"
+            position="bottom-end"
+            transitionProps={{ duration: 300, transition: "pop" }}
+          >
+            <Menu.Target>
+              <Burger
+                color="#fff"
+                opened={opened}
+                onClick={toggle}
+                aria-label="Toggle navigation"
+              />
+            </Menu.Target>
 
-        <Menu.Dropdown mt={10}>
-          {data.map(({ icon, title }) => {
-            const isColor =
-              state?.viewPortState.isView && state.viewPortState.id === title;
+            <Menu.Dropdown mt={10}>
+              {data.map(({ icon, title }) => {
+                const isColor =
+                  state?.viewPortState.isView &&
+                  state.viewPortState.id === title;
 
-            return (
-              <Menu.Item
-                onClick={() => {
-                  onClickHeaderItem(title);
-                  toggle();
-                }}
-                key={title}
-                leftSection={icon}
-                style={{
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                  color: isColor && (vars.colors.primaryColors[9] as any),
-                }}
-              >
-                {title}
-              </Menu.Item>
-            );
-          })}
-        </Menu.Dropdown>
-      </Menu>
-    </div>
+                return (
+                  <Menu.Item
+                    onClick={() => {
+                      onClickHeaderItem(title);
+                      toggle();
+                    }}
+                    key={title}
+                    leftSection={icon}
+                    style={{
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      color: isColor && (vars.colors.primaryColors[9] as any),
+                    }}
+                  >
+                    {title}
+                  </Menu.Item>
+                );
+              })}
+            </Menu.Dropdown>
+          </Menu>
+        </div>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
