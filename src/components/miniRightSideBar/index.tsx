@@ -53,6 +53,7 @@ export const MiniRightSideBar = () => {
   return (
     <div className={style.rightSidebar}>
       <Menu
+        onClose={toggle}
         shadow="md"
         position="bottom-end"
         transitionProps={{ duration: 300, transition: "pop" }}
