@@ -1,9 +1,9 @@
 import { IconUser } from "@tabler/icons-react";
-import { SectionItem } from "../../components/sectionItem";
-import style from "./style.module.css";
-import { DataUser } from "../../data";
 import { Animation } from "../../components/animation";
+import { SectionItem } from "../../components/sectionItem";
+import { DataUser } from "../../data";
 import { hiddenVisible } from "../../utils/animation";
+import style from "./style.module.css";
 
 const About = () => {
   return (

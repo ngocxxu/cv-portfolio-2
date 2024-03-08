@@ -10,14 +10,14 @@ import {
   Textarea,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import { notifications } from "@mantine/notifications";
 import { IconMail, IconSend } from "@tabler/icons-react";
 import { useState } from "react";
+import { Animation } from "../../components/animation";
 import { SectionItem } from "../../components/sectionItem";
 import { DataUser } from "../../data";
-import style from "./style.module.css";
-import { notifications } from "@mantine/notifications";
-import { Animation } from "../../components/animation";
 import { hiddenVisible } from "../../utils/animation";
+import style from "./style.module.css";
 
 type TFormInput = {
   name: string;

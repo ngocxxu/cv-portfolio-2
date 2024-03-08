@@ -3,12 +3,12 @@ import { differenceInMonths } from "date-fns";
 import CountUp from "react-countup";
 import { TypeAnimation } from "react-type-animation";
 import Square from "../../assets/logo/round-text.png";
+import { Animation } from "../../components/animation";
 import { SectionItem } from "../../components/sectionItem";
 import { DataUser } from "../../data";
-import style from "./style.module.css";
-import { onClickHeaderItem } from "../../utils/helpers";
-import { Animation } from "../../components/animation";
 import { hiddenVisible } from "../../utils/animation";
+import { onClickHeaderItem } from "../../utils/helpers";
+import style from "./style.module.css";
 
 const Home = () => {
   const startDate = new Date(2021, 5); // June (0-indexed month)

@@ -13,18 +13,16 @@ import Testimonial from "../testimonial";
 export const ContainerPage = () => {
   return (
     <>
-      <div>
-        <MiniRightSideBar />
-        <LeftSidebar />
-        <Home />
-        <About />
-        <Resume />
-        <MySkills />
-        <Portfolio />
-        <Testimonial />
-        <Contact />
-        <RightSidebar />
-      </div>
+      <MiniRightSideBar />
+      <LeftSidebar />
+      <Home />
+      <About />
+      <Resume />
+      <MySkills />
+      <Portfolio />
+      <Testimonial />
+      <Contact />
+      <RightSidebar />
       <Area />
     </>
   );
