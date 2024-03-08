@@ -23,7 +23,11 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 
-const LayoutLazy = lazy(() => import("./page/layout"));
+const LayoutLazy = lazy(() => {
+  return new Promise((resolve) => setTimeout(resolve, 2000)).then(
+    () => import("./page/layout")
+  );
+});
 
 function App() {
   const routes = [
