@@ -13,6 +13,7 @@ import Testimonial from "../testimonial";
 export const ContainerPage = () => {
   return (
     <>
+      <Area />
       <MiniRightSideBar />
       <LeftSidebar />
       <Home />
@@ -23,7 +24,6 @@ export const ContainerPage = () => {
       <Testimonial />
       <Contact />
       <RightSidebar />
-      <Area />
     </>
   );
 };
