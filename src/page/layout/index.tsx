@@ -1,11 +1,12 @@
-import { Outlet } from "react-router-dom";
-import "./style.css";
+import { Outlet } from 'react-router-dom';
+import './style.css';
+import { ReactLenis } from 'lenis/react';
 
 const Layout = () => {
   return (
-    <div className="layout">
+    <ReactLenis root className='layout'>
       <Outlet />
-    </div>
+    </ReactLenis>
   );
 };
 
