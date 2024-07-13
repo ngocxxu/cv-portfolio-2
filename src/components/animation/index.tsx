@@ -1,17 +1,16 @@
-import { Variants, motion, useAnimation, useInView } from "framer-motion";
-import { ReactNode, useEffect, useRef } from "react";
-import { hiddenVisible } from "../../utils/animation";
-import style from "./style.module.css";
+import { Variants, motion, useAnimation, useInView } from 'framer-motion';
+import { ReactNode, useEffect, useRef } from 'react';
+import { hiddenVisible } from '../../utils/animation';
 
 type TAnimation = {
   children: ReactNode;
-  width?: "fit-content" | "100%";
+  width?: 'fit-content' | '100%';
   variants?: Variants;
 };
 
 export const Animation = ({
   children,
-  width = "100%",
+  width = '100%',
   variants = hiddenVisible,
 }: TAnimation) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -22,19 +21,19 @@ export const Animation = ({
   useEffect(() => {
     // fire animation
     if (isInView) {
-      mainControls.start("visible");
+      mainControls.start('visible');
       // slideControls.start("visible");
     } else {
-      mainControls.start("hidden");
+      mainControls.start('hidden');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   return (
-    <div ref={ref} style={{ width }} className={style.container}>
+    <div ref={ref} style={{ width }}>
       <motion.div
         variants={variants}
-        initial="hidden"
+        initial='hidden'
         animate={mainControls}
         exit={{ opacity: 0 }}
       >
