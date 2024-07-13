@@ -1,74 +1,68 @@
-import { BackgroundImage, Button } from "@mantine/core";
-import { IconCategory } from "@tabler/icons-react";
-import { SectionItem } from "../../components/sectionItem";
-import { DataUser } from "../../data";
-import style from "./style.module.css";
-import { Animation } from "../../components/animation";
-import { hiddenVisible } from "../../utils/animation";
-// import { useInView } from "../../assets/hooks/useInView";
+import { Badge } from '@mantine/core';
+import { IconCategory } from '@tabler/icons-react';
+import { useScroll } from 'framer-motion';
+import { useRef } from 'react';
+import {
+  AnimationStackedCard,
+  AnimationTitle,
+} from '../../components/animation/stackedCard';
+import { PortfolioSectionItem } from '../../components/portfolioSectionItem';
+import portfolioSectionItemStyle from '../../components/portfolioSectionItem/style.module.css';
+import { DataUser } from '../../data';
+import style from './style.module.css';
 
 const Portfolio = () => {
-  return (
-    <SectionItem
-      title="Portfolio"
-      icon={<IconCategory size="0.9rem" style={{ marginRight: "5px" }} />}
-    >
-      <Animation variants={hiddenVisible}>
-        <div className={style.bigText}>
-          Featured <span>Projects</span>
-        </div>
-      </Animation>
+  const containerRef = useRef(null);
 
-      <div>
-        {DataUser.portfolio.coding.map(
-          ({ demo, frontend, backend, image, title }) => (
-            <div key={title} className={style.item}>
-              <Animation width="100%" variants={hiddenVisible}>
-                <BackgroundImage
-                  src={image}
-                  radius="sm"
-                  classNames={{
-                    root: style.inner,
-                  }}
-                >
-                  <div className={style.button}>
-                    <Button
-                      onClick={() => window.open(frontend, "_blank")}
-                      classNames={{ root: style.root }}
-                      variant="filled"
-                      radius="xl"
-                    >
-                      Frontend
-                    </Button>
-                    {backend && (
-                      <Button
-                        onClick={() => window.open(backend, "_blank")}
-                        classNames={{ root: style.root }}
-                        variant="filled"
-                        radius="xl"
-                      >
-                        Backend
-                      </Button>
-                    )}
-                    <Button
-                      onClick={() => window.open(demo, "_blank")}
-                      classNames={{ root: style.root }}
-                      variant="filled"
-                      radius="xl"
-                    >
-                      Demo
-                    </Button>
-                  </div>
-                </BackgroundImage>
-                <h3 className={style.h3}>
-                  <span className={style.span}>{title}</span>
-                </h3>
-              </Animation>
-            </div>
-          )
-        )}
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end end'],
+  });
+
+  return (
+    <PortfolioSectionItem title='Portfolio'>
+      <div
+        ref={containerRef}
+        style={{
+          position: 'relative',
+          height: `${DataUser.portfolio.coding.length * 100}vh`,
+        }}
+      >
+        <AnimationTitle
+          className={style.bigText}
+          progress={scrollYProgress}
+        >
+          <Badge
+            leftSection={
+              <IconCategory size='0.9rem' style={{ marginRight: '5px' }} />
+            }
+            className={portfolioSectionItemStyle.badge}
+            variant='outline'
+            size='xl'
+          >
+            Portfolio
+          </Badge>
+        </AnimationTitle>
+
+        <AnimationTitle
+          top='15%'
+          className={style.bigText}
+          progress={scrollYProgress}
+        >
+          Featured <span>Projects</span>
+        </AnimationTitle>
+
+        {DataUser.portfolio.coding.map((item, index) => (
+          <AnimationStackedCard
+            key={index}
+            content={item}
+            index={index}
+            progress={scrollYProgress}
+            total={DataUser.portfolio.coding.length}
+          />
+        ))}
       </div>
-    </SectionItem>
+    </PortfolioSectionItem>
   );
 };
 
