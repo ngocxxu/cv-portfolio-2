@@ -30,3 +30,32 @@ P {
 .description {
   color: #999999;
 }
+
+.timelineRoot {
+  border-left: 2px solid rgba(0, 231, 118, 0.3);
+  padding-left: 1px;
+}
+
+.timelineContentItem {
+  height: 400px;
+}
+
+.bullet {
+  left: -30px;
+  border-width: 3px;
+  border-color: white;
+  background-color: var(--mantine-color-green-7);
+  box-shadow: 0 0 2px var(--mantine-color-green-7),
+    0 0 4px var(--mantine-color-green-7), 0 0 6px var(--mantine-color-green-7),
+    0 0 10px var(--mantine-color-green-7);
+}
+
+.scrollbar {
+  &,
+  &:hover {
+    background-color: transparent;
+  }
+  &[data-orientation='vertical'] .thumb {
+    background-color: var(--mantine-color-green-7);
+  }
+}
