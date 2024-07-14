@@ -1,0 +1,35 @@
+.container {
+  position: absolute;
+  left: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.cardContainer {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  min-width: 300px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardOverlayItem {
+  position: absolute;
+  background-color: black;
+  pointer-events: none;
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+}

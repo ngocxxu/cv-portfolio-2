@@ -1,39 +1,64 @@
-import { AspectRatio, Box, Modal, Stack, Text } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { IconMessage } from "@tabler/icons-react";
-import { useMemo } from "react";
-import Hiking from "../../assets/projects/hiking.webp";
-import { Animation } from "../../components/animation";
-import { CarouselCustom } from "../../components/carousel";
-import { SectionItem } from "../../components/sectionItem";
-import { IconLeftQuote } from "../../components/svg/IconLeftQuote";
-import { DataUser } from "../../data";
-import { vars } from "../../main";
-import { hiddenVisible } from "../../utils/animation";
-import style from "./style.module.css";
+import { Box, Stack, Text } from '@mantine/core';
+import { IconMessage } from '@tabler/icons-react';
+import { useMemo } from 'react';
+import { Animation } from '../../components/animation';
+import { InfinityCarousel } from '../../components/animation/infinityCarousel';
+import { SectionItem } from '../../components/sectionItem';
+import { IconLeftQuote } from '../../components/svg/IconLeftQuote';
+import { DataUser } from '../../data';
+import { vars } from '../../main';
+import { hiddenVisible } from '../../utils/animation';
+import style from './style.module.css';
 
 const Testimonial = () => {
-  const [opened, { open, close }] = useDisclosure(false);
-
   const body = useMemo(
     () =>
       DataUser.testiminial.quotes.map(({ author, content, id }, index) => ({
         slide: index,
         contents: (
-          <Box key={id} className={style.box} p={30} px={60} mr={10}>
-            <Stack align="center">
+          <Box key={id} className={style.box} py={60} px={60} mt={10} mr={10}>
+            <Stack align='center'>
               <IconLeftQuote
                 className={style.icon1}
                 fill={vars.colors.primaryColors[9]}
               />
-              <Text color="#fff" size="22px" mt="xs" mb="md">
+              <Text color='#fff' size='22px' mt='xs' mb='md'>
                 {content}
               </Text>
               <Text
-                mr="auto"
-                c="dimmed"
-                size="md"
-                style={{ lineHeight: 1, fontStyle: "italic" }}
+                mr='auto'
+                c='dimmed'
+                size='md'
+                style={{ lineHeight: 1, fontStyle: 'italic' }}
+              >
+                {author}
+              </Text>
+            </Stack>
+          </Box>
+        ),
+      })),
+    []
+  );
+
+  const body2 = useMemo(
+    () =>
+      DataUser.testiminial.quotes_2.map(({ author, content, id }, index) => ({
+        slide: index,
+        contents: (
+          <Box key={id} className={style.box} py={60} px={60} mt={10} mr={10}>
+            <Stack align='center'>
+              <IconLeftQuote
+                className={style.icon1}
+                fill={vars.colors.primaryColors[9]}
+              />
+              <Text color='#fff' size='22px' mt='xs' mb='md'>
+                {content}
+              </Text>
+              <Text
+                mr='auto'
+                c='dimmed'
+                size='md'
+                style={{ lineHeight: 1, fontStyle: 'italic' }}
               >
                 {author}
               </Text>
@@ -46,8 +71,8 @@ const Testimonial = () => {
 
   return (
     <SectionItem
-      title="Testimonial"
-      icon={<IconMessage size="0.9rem" style={{ marginRight: "5px" }} />}
+      title='Testimonial'
+      icon={<IconMessage size='0.9rem' style={{ marginRight: '5px' }} />}
     >
       <Animation variants={hiddenVisible}>
         <div className={style.bigText}>
@@ -55,43 +80,21 @@ const Testimonial = () => {
         </div>
       </Animation>
 
-      <Animation variants={hiddenVisible}>
-        <CarouselCustom
-          classNameControl={style.control}
-          classNameControls={style.controls}
-          classNameRoot={style.root}
-          body={body}
-        />
-      </Animation>
+      <InfinityCarousel isReverse>
+        {[...body, ...body].map((item, index) => (
+          <div key={index}>{item.contents}</div>
+        ))}
+      </InfinityCarousel>
 
-      <Animation variants={hiddenVisible}>
-        <AspectRatio onClick={open} ratio={16 / 9} mx="auto">
-          <div className={style["video-play-button"]} onClick={open}>
-            <span></span>
-          </div>
-          <img className={style.img} src={Hiking} alt="hiking" />
-        </AspectRatio>
-      </Animation>
+      <Box h={250} />
 
-      <Modal
-        transitionProps={{ duration: 500, transition: "slide-up" }}
-        opened={opened}
-        onClose={close}
-        size="xl"
-        withCloseButton={false}
-        centered
-      >
-        <AspectRatio ratio={16 / 9}>
-          <iframe
-            className={style.video}
-            src="https://www.youtube.com/embed/F5-qkgfBeuU"
-            title="Comfort Will Ruin Your Life"
-            style={{ border: 0 }}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        </AspectRatio>
-      </Modal>
+      <InfinityCarousel>
+        {[...body2, ...body2].map((item, index) => (
+          <div key={index}>{item.contents}</div>
+        ))}
+      </InfinityCarousel>
+
+      <Box h={200} />
     </SectionItem>
   );
 };
