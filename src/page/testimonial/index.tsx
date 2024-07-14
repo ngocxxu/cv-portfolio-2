@@ -81,16 +81,16 @@ const Testimonial = () => {
       </Animation>
 
       <InfinityCarousel isReverse>
-        {[...body, ...body].map((item) => (
-          <div key={item.slide}>{item.contents}</div>
+        {[...body, ...body].map((item, index) => (
+          <div key={index}>{item.contents}</div>
         ))}
       </InfinityCarousel>
 
       <Box h={250} />
 
       <InfinityCarousel>
-        {[...body2, ...body2].map((item) => (
-          <div key={item.slide}>{item.contents}</div>
+        {[...body2, ...body2].map((item, index) => (
+          <div key={index}>{item.contents}</div>
         ))}
       </InfinityCarousel>
 

@@ -297,14 +297,12 @@ export const DataUser = {
       },
       {
         id: 2,
-        content:
-          'When you want to give up, remember why you started.',
+        content: 'When you want to give up, remember why you started.',
         author: 'Noname',
       },
       {
         id: 3,
-        content:
-          'No challenge shall never know all its capabilities.',
+        content: 'No challenge shall never know all its capabilities.',
         author: 'Goethe',
       },
       {
