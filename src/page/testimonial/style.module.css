@@ -18,6 +18,11 @@
 .box {
   border: 1px solid #565656;
   border-radius: 1rem;
+  width: 600px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon1 {
@@ -67,7 +72,7 @@
 }
 
 .video-play-button:before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: 0;
   left: 50%;
@@ -82,7 +87,7 @@
 }
 
 .video-play-button:after {
-  content: "";
+  content: '';
   position: absolute;
   z-index: 1;
   left: 50%;

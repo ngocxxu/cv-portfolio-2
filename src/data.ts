@@ -288,5 +288,31 @@ export const DataUser = {
         author: 'Vivian Greene',
       },
     ],
+    quotes_2: [
+      {
+        id: 1,
+        content:
+          'Lazy makes poor, but diligent does not make rich but you will not starve.',
+        author: 'Ngoc Quach',
+      },
+      {
+        id: 2,
+        content:
+          'When you want to give up, remember why you started.',
+        author: 'Noname',
+      },
+      {
+        id: 3,
+        content:
+          'No challenge shall never know all its capabilities.',
+        author: 'Goethe',
+      },
+      {
+        id: 4,
+        content:
+          'On the way to success, there will be no footprints of the lazy.',
+        author: 'Noname',
+      },
+    ],
   },
 };
