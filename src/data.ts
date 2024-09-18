@@ -4,9 +4,9 @@ export const DataUser = {
       'https://www.topcv.vn/xem-cv/DFlWBgQGAw9dDwILVwIFVg4GCQ8MAgIDXFQLUg74ed',
     name: 'Ngoc Quach',
     enName: 'Bono',
-    jobTitle: 'Frontend Developer',
+    jobTitle: 'Software Developer',
     address: 'Ho Chi Minh City, Viet Nam',
-    bigText: 'Say Hi from Ngoc, Frontend Developer',
+    bigText: 'Say Hi from Ngoc, Software Developer',
     bigText2: 'My energy never runs out at work!',
     mail: 'ngocquach43@gmail.com',
     dateToWork: '06/2021',
@@ -138,7 +138,7 @@ export const DataUser = {
       {
         imgTitle: 'vocab',
         image:
-          'https://res.cloudinary.com/ngocxxu/image/upload/v1709403786/portfolio-2/vocab-manage_rrjg9e.jpg',
+          'https://res.cloudinary.com/ngocxxu/image/upload/v1726651554/portfolio-2/vocab-2_tigsta.png',
         title: 'Vocabulary Management',
         description:
           'Web is a vocab management web which I built the backend from myself and combined it with the frontend.',

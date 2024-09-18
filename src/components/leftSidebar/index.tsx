@@ -3,14 +3,13 @@ import {
   IconBrandFacebook,
   IconBrandGithub,
   IconBrandLinkedin,
-  IconMail,
+  IconId,
 } from '@tabler/icons-react';
 import { format } from 'date-fns';
-import Me from '../../assets/logo/me.webp';
-import { DataUser } from '../../data';
-import style from './style.module.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { DataUser } from '../../data';
+import style from './style.module.css';
 
 const social = [
   {
@@ -39,9 +38,8 @@ export const LeftSidebar = () => {
           style: { transitionDelay: '1s' },
         }}
         className={style.image}
-        src={Me}
+        src='https://res.cloudinary.com/ngocxxu/image/upload/v1726651876/portfolio-2/me_bvu1cq.jpg'
       />
-      {/* <img src={Me} alt='me' className={style.image} /> */}
       <h3 className={style.email}>{DataUser.home.mail}</h3>
       <h3 className={style.address}>{DataUser.home.address}</h3>
       <p className={style.copyRight}>
@@ -66,13 +64,13 @@ export const LeftSidebar = () => {
       </div>
       <Button
         onClick={() => window.open(DataUser.home.linkCV, '_blank')}
-        leftSection={<IconMail />}
+        leftSection={<IconId />}
         className={style.themeBtn}
         variant='filled'
         size='lg'
         radius='xl'
       >
-        HIRE ME!
+        DETAIL CV
       </Button>
     </div>
   );
