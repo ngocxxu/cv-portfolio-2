@@ -4,9 +4,9 @@ export const DataUser = {
       'https://www.topcv.vn/xem-cv/DFlWBgQGAw9dDwILVwIFVg4GCQ8MAgIDXFQLUg74ed',
     name: 'Ngoc Quach',
     enName: 'Bono',
-    jobTitle: 'Software Developer',
+    jobTitle: 'Fullstack Developer',
     address: 'Ho Chi Minh City, Viet Nam',
-    bigText: 'Say Hi from Ngoc, Software Developer',
+    bigText: 'Say Hi from Ngoc, Fullstack Developer',
     bigText2: 'My energy never runs out at work!',
     mail: 'ngocquach43@gmail.com',
     dateToWork: '06/2021',
@@ -21,9 +21,21 @@ export const DataUser = {
   resume: {
     experience: [
       {
-        time: '06/2022 - Present',
+        time: '10/2024 - Present',
+        company: 'ST Engineering',
+        position: 'Fullstack Developer',
+        description: [
+          '- Work with architects to understand end-to-end architecture, and individual application architecture',
+          '- Work with business analysts to understand business requirements',
+          '- Produce technical design document for assigned modules, and develop according to specification',
+          '- Collaborate with other developer for API integration, and system integration tests',
+          '- Follow good coding practice to produce clean, readable, testable, and secure code',
+        ],
+      },
+      {
+        time: '06/2022 - 09/2024',
         company: 'Nexon Co., Ltd.',
-        position: 'Frontend Developer (ReactJS, NextJS)',
+        position: 'Frontend Developer',
         description: [
           '- Development of services required for publishing and management by using of Attendance page.',
           '- Developing and implementing highly-responsive user interface components using React concepts.',
@@ -36,11 +48,11 @@ export const DataUser = {
       {
         time: '11/2021 - 05/2022',
         company: 'MiTek Vietnam (Platinum Global Co., Ltd.)',
-        position: 'Software Developer (C#, ReactJS)',
+        position: 'Frontend Developer',
         description: [
           '- Design, code, test and debug new software utilizing technologies for the project assigned.',
           '- Website about construction process management, a house when built will display information including materials, time and labor. Customers can monitor and request changes directly on that house.',
-          '- Participate in resolving production issues and tackling bugs in the system.',
+          '- Participate in resolving prduction issues and tackling bugs in the system.',
           '- Collaborate with Product Management, Software Quality Assurance, and other development teams to ensure that solutions are efficient, consistent and fulfill business needs.',
           '- Participate in requirements reviews, design and design reviews.',
           '- Work in an Agile software development environment (using Scrum), participating in daily scrum meetings, monthly retrospective and planning meetings.',
@@ -49,7 +61,7 @@ export const DataUser = {
       {
         time: '06/2021 - 08/2021',
         company: 'Kyanon Digital',
-        position: 'Intern Frontend Developer (HTML, CSS, JS, Jquery, ReactJS)',
+        position: 'Intern Frontend Developer',
         description: [
           '- Building UI for the landing page of the website on the client-side and server-side.',
           '- Join in realistic projects and daily meetings with team and customer.',

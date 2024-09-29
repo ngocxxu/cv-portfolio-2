@@ -1,6 +1,5 @@
 import { ActionIcon, Button } from '@mantine/core';
 import {
-  IconBrandFacebook,
   IconBrandGithub,
   IconBrandLinkedin,
   IconId,
@@ -18,10 +17,10 @@ const social = [
     color: '',
   },
   { icon: <IconBrandGithub />, link: 'https://github.com/ngocxxu' },
-  {
-    icon: <IconBrandFacebook />,
-    link: 'https://www.facebook.com/ngocquach97',
-  },
+  // {
+  //   icon: <IconBrandFacebook />,
+  //   link: 'https://www.facebook.com/ngocquach97',
+  // },
 ];
 
 export const LeftSidebar = () => {

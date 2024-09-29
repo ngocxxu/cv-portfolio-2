@@ -21,6 +21,7 @@ const skills = [
     icon: <IconBrandReact />,
     title: 'Frontend',
     detail: [
+      'Svelte',
       'ReactJS',
       'NextJS',
       'JQuery',
