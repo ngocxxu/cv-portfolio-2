@@ -25,11 +25,11 @@ export const DataUser = {
         company: 'ST Engineering',
         position: 'Fullstack Developer',
         description: [
-          '- Work with architects to understand end-to-end architecture, and individual application architecture',
-          '- Work with business analysts to understand business requirements',
-          '- Produce technical design document for assigned modules, and develop according to specification',
-          '- Collaborate with other developer for API integration, and system integration tests',
-          '- Follow good coding practice to produce clean, readable, testable, and secure code',
+          '- Implemented CI/CD pipelines for software deployment, reducing manual processes and improving team efficiency in delivering applications to production environments.',
+          '- Supported microservices deployment on Amazon EKS, gaining hands-on experience with Kubernetes, containerization, and cloud infrastructure management.',
+          '- Developed automation scripts to streamline deployment workflows and enhance operational productivity.',
+          '- Assisted in setting up monitoring solutions using Prometheus and Grafana, contributing to system performance tracking and issue detection.',
+          '- Collaborated with cross-functional teams to learn and apply DevOps best practices, demonstrating strong technical adaptability and eagerness to grow.',
         ],
       },
       {
