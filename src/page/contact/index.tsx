@@ -1,4 +1,4 @@
-import emailjs from "@emailjs/browser";
+import emailjs from '@emailjs/browser';
 import {
   Box,
   Button,
@@ -8,16 +8,16 @@ import {
   Text,
   TextInput,
   Textarea,
-} from "@mantine/core";
-import { useForm } from "@mantine/form";
-import { notifications } from "@mantine/notifications";
-import { IconMail, IconSend } from "@tabler/icons-react";
-import { useState } from "react";
-import { Animation } from "../../components/animation";
-import { SectionItem } from "../../components/sectionItem";
-import { DataUser } from "../../data";
-import { hiddenVisible } from "../../utils/animation";
-import style from "./style.module.css";
+} from '@mantine/core';
+import { useForm } from '@mantine/form';
+import { notifications } from '@mantine/notifications';
+import { IconMail, IconSend } from '@tabler/icons-react';
+import { useState } from 'react';
+import { Animation } from '../../components/animation';
+import { SectionItem } from '../../components/sectionItem';
+import { DataUser } from '../../data';
+import { hiddenVisible } from '../../utils/animation';
+import style from './style.module.css';
 
 type TFormInput = {
   name: string;
@@ -29,42 +29,38 @@ type TFormInput = {
 const Contact = () => {
   const [visible, setVisible] = useState(false);
   const form = useForm({
-    initialValues: { name: "", email: "", message: "", subject: "" },
+    initialValues: { name: '', email: '', message: '', subject: '' },
 
     validate: {
       name: (value) =>
-        value.length < 2 ? "Name must have at least 2 letters" : null,
+        value.length < 2 ? 'Name must have at least 2 letters' : null,
       subject: (value) =>
-        value.length < 2 ? "Subject must have at least 2 letters" : null,
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
+        value.length < 2 ? 'Subject must have at least 2 letters' : null,
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+      message: (value) =>
+        value.length < 20 ? 'Message must have at least 20 letters' : null,
     },
   });
 
   const onSubmit = async (e: TFormInput) => {
     setVisible(true);
 
-    const serviceId = "service_aq7j1ud";
-    const templateId = "template_i9jmqsu";
-    const publicKey = "user_M6isEnD29CNuHp9due1g5";
+    const serviceId = 'service_aq7j1ud';
+    const templateId = 'template_i9jmqsu';
+    const publicKey = 'user_M6isEnD29CNuHp9due1g5';
 
     const templateParams = {
       from_name: e.name,
       from_email: e.email,
-      to_name: "Ngoc Quach",
+      to_name: 'Ngoc Quach',
       message: e.message,
     };
 
     try {
-      const result = await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        publicKey
-      );
-      console.log(result.text);
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
       notifications.show({
-        title: "Success",
-        message: "Thank you for sending to me!",
+        title: 'Success',
+        message: 'Thank you for sending to me!',
       });
       setVisible(false);
       form.reset();
@@ -72,8 +68,8 @@ const Contact = () => {
     } catch (error: any) {
       console.log(error.text);
       notifications.show({
-        color: "red",
-        title: "Error",
+        color: 'red',
+        title: 'Error',
         message: error.text,
       });
       setVisible(false);
@@ -82,8 +78,8 @@ const Contact = () => {
 
   return (
     <SectionItem
-      title="Contact"
-      icon={<IconMail size="0.9rem" style={{ marginRight: "5px" }} />}
+      title='Contact'
+      icon={<IconMail size='0.9rem' style={{ marginRight: '5px' }} />}
     >
       <Animation variants={hiddenVisible}>
         <div className={style.bigText}>
@@ -91,20 +87,20 @@ const Contact = () => {
         </div>
       </Animation>
 
-      <Box pos="relative">
+      <Box pos='relative'>
         <LoadingOverlay
           overlayProps={{
-            radius: "sm",
+            radius: 'sm',
             blur: 2,
-            bg: "#1f1f1f",
+            bg: '#1f1f1f',
             opacity: 0.5,
           }}
           visible={visible}
-          loaderProps={{ children: <Loader type="bars" /> }}
+          loaderProps={{ children: <Loader type='bars' /> }}
         />
 
         <Animation variants={hiddenVisible}>
-          <Text size="1.3rem" color="#fff">
+          <Text size='1.3rem' color='#fff'>
             {DataUser.home.mail}
           </Text>
         </Animation>
@@ -113,28 +109,28 @@ const Contact = () => {
           <Animation variants={hiddenVisible}>
             <Flex
               my={50}
-              justify="space-between"
-              align="center"
-              direction="row"
-              wrap="wrap"
+              justify='space-between'
+              align='center'
+              direction='row'
+              wrap='wrap'
             >
               <TextInput
                 classNames={{ input: style.input, label: style.label }}
-                variant="unstyled"
+                variant='unstyled'
                 withAsterisk
-                w="49%"
-                label="FULL NAME"
-                placeholder="Your full name"
-                {...form.getInputProps("name")}
+                w='49%'
+                label='FULL NAME'
+                placeholder='Your full name'
+                {...form.getInputProps('name')}
               />
               <TextInput
                 classNames={{ input: style.input, label: style.label }}
-                variant="unstyled"
+                variant='unstyled'
                 withAsterisk
-                w="49%"
-                label="EMAIL"
-                placeholder="Your email address"
-                {...form.getInputProps("email")}
+                w='49%'
+                label='EMAIL'
+                placeholder='Your email address'
+                {...form.getInputProps('email')}
               />
             </Flex>
           </Animation>
@@ -142,49 +138,50 @@ const Contact = () => {
           <Animation variants={hiddenVisible}>
             <Flex
               my={50}
-              justify="space-between"
-              align="center"
-              direction="row"
-              wrap="wrap"
+              justify='space-between'
+              align='center'
+              direction='row'
+              wrap='wrap'
             >
               <TextInput
                 classNames={{ input: style.input, label: style.label }}
-                variant="unstyled"
-                w="49%"
-                label="PHONE (OPTIONAL)"
-                placeholder="Your phone number"
-                {...form.getInputProps("phone")}
+                variant='unstyled'
+                w='49%'
+                label='PHONE (OPTIONAL)'
+                placeholder='Your phone number'
+                {...form.getInputProps('phone')}
               />
               <TextInput
                 classNames={{ input: style.input, label: style.label }}
-                variant="unstyled"
+                variant='unstyled'
                 withAsterisk
-                w="49%"
-                label="SUBJECT"
-                placeholder="Your subject"
-                {...form.getInputProps("subject")}
+                w='49%'
+                label='SUBJECT'
+                placeholder='Your subject'
+                {...form.getInputProps('subject')}
               />
             </Flex>
           </Animation>
 
           <Animation variants={hiddenVisible}>
             <Textarea
-              resize="vertical"
+              resize='vertical'
               classNames={{ input: style.input, label: style.label }}
-              variant="unstyled"
-              radius="xs"
-              label="MESSAGE"
-              placeholder="Write your message here ..."
-              {...form.getInputProps("message")}
+              variant='unstyled'
+              withAsterisk
+              radius='xs'
+              label='MESSAGE'
+              placeholder='Write your message here ...'
+              {...form.getInputProps('message')}
             />
             <Button
               mt={40}
-              type="submit"
+              type='submit'
               leftSection={<IconSend />}
               className={style.themeBtn}
-              variant="filled"
-              size="lg"
-              radius="xl"
+              variant='filled'
+              size='lg'
+              radius='xl'
             >
               SEND MESSAGE
             </Button>

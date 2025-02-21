@@ -24,24 +24,22 @@ const skills = [
       'Svelte',
       'ReactJS',
       'NextJS',
-      'JQuery',
-      'basic AngularJS',
-      'basic VueJS',
-      'basic React Native',
     ],
   },
   {
     icon: <IconBrandNextjs />,
     title: 'Backend',
-    detail: ['ExpressJS', 'Django', 'Ruby On Rails'],
+    detail: ['NestJS', 'ExpressJS', 'Django', 'Ruby On Rails', 'Hasura'],
   },
   {
     icon: <IconBrandAws />,
     title: 'DevOps',
     detail: [
       'AWS',
+      'K8s',
       'Docker',
-      'Github Action (CI/CD)',
+      'Github Action',
+      'Gitlab CI',
       'NginX',
       'Redis',
       'Koyeb',
@@ -51,12 +49,12 @@ const skills = [
   {
     icon: <IconDatabase />,
     title: 'Database',
-    detail: ['MongoDB', 'basic SQL', 'MySQL', 'GraphQL', 'PostgreSQL'],
+    detail: ['MongoDB', 'SQL', 'MySQL', 'GraphQL', 'PostgreSQL'],
   },
   {
     icon: <IconMicroscope />,
     title: 'Unit test',
-    detail: ['Vitest', 'FactoryBot'],
+    detail: ['Vitest', 'FactoryBot', 'Jest'],
   },
   {
     icon: <IconCode />,

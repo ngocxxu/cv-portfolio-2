@@ -27,9 +27,9 @@ export const DataUser = {
         description: [
           '- Implemented CI/CD pipelines for software deployment, reducing manual processes and improving team efficiency in delivering applications to production environments.',
           '- Supported microservices deployment on Amazon EKS, gaining hands-on experience with Kubernetes, containerization, and cloud infrastructure management.',
-          '- Developed automation scripts to streamline deployment workflows and enhance operational productivity.',
-          '- Assisted in setting up monitoring solutions using Prometheus and Grafana, contributing to system performance tracking and issue detection.',
           '- Collaborated with cross-functional teams to learn and apply DevOps best practices, demonstrating strong technical adaptability and eagerness to grow.',
+          '- Designed and implemented scalable backend systems using modern frameworks and technologies, ensuring high performance and reliability for production environments.',
+          '- Set up and configured new projects backend from scratch, including defining architecture, integrating APIs, and establishing development workflows to support seamless collaboration across teams.',
         ],
       },
       {
@@ -61,7 +61,7 @@ export const DataUser = {
       {
         time: '06/2021 - 08/2021',
         company: 'Kyanon Digital',
-        position: 'Intern Frontend Developer',
+        position: 'Frontend Developer (Intern)',
         description: [
           '- Building UI for the landing page of the website on the client-side and server-side.',
           '- Join in realistic projects and daily meetings with team and customer.',
@@ -77,31 +77,6 @@ export const DataUser = {
         company: 'University of Information Technology',
         position: 'Information Technology',
         description: ["- 2nd Bachelor's Degree"],
-      },
-      {
-        time: '06/2022 - 09/2022',
-        company: 'Informatics Center VNUHCM',
-        position: 'Backend Development',
-        description: [
-          '- Building methods, client system, service application.',
-          '- Using technical google map, Form PDF, Graph/Chart, IndexedBD.',
-          '- Building and accessing database by MongoDB (server).',
-          '- Building services Send Mail, SMS, Facebook, Youtube.',
-          '- Synchronous with Server Sent Event and Web Service Worker.',
-          '- Embed the CKEDITOR 4, INLINE editor in the app.',
-        ],
-      },
-      {
-        time: '03/2021 - 09/2021',
-        company: 'Cybersoft Academy',
-        position: 'Frontend Development',
-        description: [
-          '- Learning in advanced CSS through frameworks CSS, SASS, HTML5, CSS3.',
-          '- Learning about Responsive and Bootstrap.',
-          '- Learning in-depth advanced Javascript.',
-          '- Understand and practice building websites from Wireframe / tools.',
-          '- Build real project system with Javascript, Framework Angular, Ajax, JSON, ReactJS.',
-        ],
       },
       {
         time: '08/2015 - 09/2019',
