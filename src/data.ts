@@ -100,10 +100,10 @@ export const DataUser = {
         title: 'Vocabulary Management',
         description:
           'Web is a vocab management web which I built the backend from myself and combined it with the frontend.',
-        hashtag: ['#reactjs', '#fullstack', '#vocabulary'],
-        frontend: 'https://github.com/ngocxxu/vocab-management-fe',
-        backend: 'https://github.com/ngocxxu/vocab-management-be',
-        demo: 'https://vocab-management.web.app/',
+        hashtag: ['#fullstack', '#k8s', '#vocabulary'],
+        frontend: 'https://github.com/ngocxxu/vocab-management-fe-2',
+        backend: 'https://github.com/ngocxxu/vocab-management-be-2',
+        demo: 'https://vocab.ngocquach.top/',
       },
       // {
       //   porfolioImage:

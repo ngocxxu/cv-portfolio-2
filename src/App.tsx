@@ -6,6 +6,7 @@ import { ContainerPage } from "./page/container";
 import { Suspense, lazy } from "react";
 import { ErrorTemplate } from "./page/error";
 import { Flex, Loader } from "@mantine/core";
+import ProjectDetail from "./page/projectDetail";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -49,7 +50,10 @@ function App() {
           <LayoutLazy />
         </Suspense>
       ),
-      children: [{ path: "/", element: <ContainerPage /> }],
+      children: [
+        { path: "/", element: <ContainerPage /> },
+        { path: "/read-detail/:projectId", element: <ProjectDetail /> },
+      ],
     },
     { path: "*", element: <ErrorTemplate /> },
   ];

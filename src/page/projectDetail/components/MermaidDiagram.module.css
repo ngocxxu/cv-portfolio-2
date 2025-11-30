@@ -1,0 +1,41 @@
+.diagramContainer {
+  width: 100%;
+  overflow: auto;
+  margin: 1rem 0;
+  max-height: 600px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid rgba(40, 233, 140, 0.2);
+  border-radius: 8px;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.diagramContainer::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  display: block;
+}
+
+.diagramContainer::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.diagramContainer::-webkit-scrollbar-thumb {
+  background: rgba(40, 233, 140, 0.5);
+  border-radius: 4px;
+}
+
+.diagramContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(40, 233, 140, 0.7);
+}
+
+.diagramImage {
+  max-width: none;
+  width: auto;
+  height: auto;
+  display: block;
+  min-width: 100%;
+}

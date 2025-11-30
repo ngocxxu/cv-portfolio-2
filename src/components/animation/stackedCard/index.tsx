@@ -2,6 +2,9 @@ import { BackgroundImage, Button } from '@mantine/core';
 import { motion, MotionValue, useTransform } from 'framer-motion';
 import style from './style.module.css';
 import { ReactNode } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import { useNavigate } from 'react-router-dom';
 
 type TAnimationStackedCard = {
   content: {
@@ -10,6 +13,7 @@ type TAnimationStackedCard = {
     backend?: string;
     image: string;
     title: string;
+    images?: string[];
   };
   progress: MotionValue<number>;
   index: number;
@@ -59,12 +63,28 @@ export const AnimationStackedCard = ({
   index,
   total,
 }: TAnimationStackedCard) => {
-  const { demo, frontend, backend, image, title } = content;
+  const { demo, frontend, backend, image, title, images } = content;
+  const navigate = useNavigate();
   const yRange = [index / total, (index + 1) / total];
   const opacity = useTransform(progress, yRange, [0, 1]);
   const y = useTransform(progress, yRange, ['100%', '0%']);
   const targetScale = 1 - (total - index) * 0.05;
   const scale = useTransform(progress, [index * 0.25, 1], [1, targetScale]);
+
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 3000, stopOnInteraction: false }),
+  ]);
+
+  const hasImages = images && images.length > 0;
+
+  const getProjectSlug = (projectTitle: string) => {
+    return projectTitle.toLowerCase().replace(/\s+/g, '-');
+  };
+
+  const handleReadDetail = () => {
+    const slug = getProjectSlug(title);
+    navigate(`/read-detail/${slug}`);
+  };
 
   return (
     <motion.div
@@ -83,45 +103,101 @@ export const AnimationStackedCard = ({
         backgroundColor: '#1f1f1f',
       }}
     >
-      <BackgroundImage
-        src={image}
-        radius='sm'
-        classNames={{
-          root: style.inner,
-        }}
-      >
-        <div className={style.button}>
-          <Button
-            onClick={() => window.open(frontend, '_blank')}
-            classNames={{ root: style.root }}
-            variant='filled'
-            radius='xl'
-          >
-            Frontend
-          </Button>
-          {backend && (
+      {hasImages ? (
+        <div className={style.inner}>
+          <div className={style.carouselViewport} ref={emblaRef}>
+            <div className={style.carouselContainer}>
+              {images.map((img, imgIndex) => (
+                <div key={imgIndex} className={style.carouselSlide}>
+                  <img
+                    src={img}
+                    alt={`${title} - Image ${imgIndex + 1}`}
+                    className={style.carouselImage}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className={style.button}>
             <Button
-              onClick={() => window.open(backend, '_blank')}
+              onClick={() => window.open(frontend, '_blank')}
               classNames={{ root: style.root }}
               variant='filled'
               radius='xl'
             >
-              Backend
+              Frontend
             </Button>
-          )}
-          <Button
-            onClick={() => window.open(demo, '_blank')}
-            classNames={{ root: style.root }}
-            variant='filled'
-            radius='xl'
-          >
-            Demo
-          </Button>
+            {backend && (
+              <Button
+                onClick={() => window.open(backend, '_blank')}
+                classNames={{ root: style.root }}
+                variant='filled'
+                radius='xl'
+              >
+                Backend
+              </Button>
+            )}
+            <Button
+              onClick={() => window.open(demo, '_blank')}
+              classNames={{ root: style.root }}
+              variant='filled'
+              radius='xl'
+            >
+              Demo
+            </Button>
+          </div>
         </div>
-      </BackgroundImage>
-      <h3 className={style.h3}>
-        <span className={style.span}>{title}</span>
-      </h3>
+      ) : (
+        <BackgroundImage
+          src={image}
+          radius='sm'
+          classNames={{
+            root: style.inner,
+          }}
+        >
+          <div className={style.button}>
+            <Button
+              onClick={() => window.open(frontend, '_blank')}
+              classNames={{ root: style.root }}
+              variant='filled'
+              radius='xl'
+            >
+              Frontend
+            </Button>
+            {backend && (
+              <Button
+                onClick={() => window.open(backend, '_blank')}
+                classNames={{ root: style.root }}
+                variant='filled'
+                radius='xl'
+              >
+                Backend
+              </Button>
+            )}
+            <Button
+              onClick={() => window.open(demo, '_blank')}
+              classNames={{ root: style.root }}
+              variant='filled'
+              radius='xl'
+            >
+              Demo
+            </Button>
+          </div>
+        </BackgroundImage>
+      )}
+      <div className={style.titleContainer}>
+        <h3 className={style.h3}>
+          <span className={style.span}>{title}</span>
+        </h3>
+        <Button
+          variant="outline"
+          onClick={handleReadDetail}
+          classNames={{ root: style.readDetailButton }}
+          radius="xl"
+        >
+          READ DETAIL
+        </Button>
+      </div>
     </motion.div>
   );
 };
