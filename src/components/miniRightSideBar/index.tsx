@@ -5,15 +5,14 @@ import {
   IconCategory,
   IconHome,
   IconMail,
-  IconMessage,
   IconTriangleSquareCircle,
-  IconUser,
+  IconUser
 } from "@tabler/icons-react";
 import { useContext } from "react";
 import { GlobalContext } from "../../context";
 import { vars } from "../../main";
-import style from "./style.module.css";
 import { onClickHeaderItem } from "../../utils/helpers";
+import style from "./style.module.css";
 
 const data = [
   {
@@ -36,10 +35,10 @@ const data = [
     icon: <IconCategory />,
     title: "Portfolio",
   },
-  {
-    icon: <IconMessage />,
-    title: "Testimonial",
-  },
+  // {
+  //   icon: <IconMessage />,
+  //   title: "Testimonial",
+  // },
   {
     icon: <IconMail />,
     title: "Contact",

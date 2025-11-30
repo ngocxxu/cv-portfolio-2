@@ -12,7 +12,7 @@ type TTimelineCustom = {
     time: string;
     company: string;
     position: string;
-    description: string[];
+    description?: string[];
   }[];
 };
 
@@ -36,7 +36,7 @@ export const TimelineCustom = ({ body }: TTimelineCustom) => {
       bulletSize={25}
       color='rgba(0, 231, 118, 0.3  )'
     >
-      {body.map(({ company, position, time, description }) => {
+      {body.map(({ company, position, time, description = [] }) => {
         const isExist = dataCollapse.find((item) => item.id === company);
 
         return (
@@ -48,6 +48,7 @@ export const TimelineCustom = ({ body }: TTimelineCustom) => {
               <h3>{position}</h3>
               <Group>
                 <p>{company}</p>
+                {description.length > 0 && (
                 <Badge
                   color={
                     isExist?.isOpen
@@ -77,7 +78,9 @@ export const TimelineCustom = ({ body }: TTimelineCustom) => {
                 >
                   Detail
                 </Badge>
+                )}
               </Group>
+              {description.length > 0 && (
               <Collapse
                 in={(isExist?.isOpen ?? false) && isExist?.id === company}
                 transitionDuration={700}
@@ -91,6 +94,7 @@ export const TimelineCustom = ({ body }: TTimelineCustom) => {
                   ))}
                 </ScrollArea>
               </Collapse>
+              )}
             </Timeline.Item>
           </Animation>
         );

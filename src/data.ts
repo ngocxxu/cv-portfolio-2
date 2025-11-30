@@ -35,7 +35,7 @@ export const DataUser = {
       {
         time: '06/2022 - 09/2024',
         company: 'Nexon Co., Ltd.',
-        position: 'Frontend Developer',
+        position: 'Software Developer',
         description: [
           '- Development of services required for publishing and management by using of Attendance page.',
           '- Developing and implementing highly-responsive user interface components using React concepts.',
@@ -48,7 +48,7 @@ export const DataUser = {
       {
         time: '11/2021 - 05/2022',
         company: 'MiTek Vietnam (Platinum Global Co., Ltd.)',
-        position: 'Frontend Developer',
+        position: 'Software Developer',
         description: [
           '- Design, code, test and debug new software utilizing technologies for the project assigned.',
           '- Website about construction process management, a house when built will display information including materials, time and labor. Customers can monitor and request changes directly on that house.',
@@ -61,7 +61,7 @@ export const DataUser = {
       {
         time: '06/2021 - 08/2021',
         company: 'Kyanon Digital',
-        position: 'Frontend Developer (Intern)',
+        position: 'Software Developer (Intern)',
         description: [
           '- Building UI for the landing page of the website on the client-side and server-side.',
           '- Join in realistic projects and daily meetings with team and customer.',
@@ -73,16 +73,14 @@ export const DataUser = {
     ],
     education: [
       {
-        time: '06/2023 - Present',
-        company: 'University of Information Technology',
+        time: '06/2023 - 12/2024',
+        company: 'University of Information Technology (2nd Degree)',
         position: 'Information Technology',
-        description: ["- 2nd Bachelor's Degree"],
       },
       {
         time: '08/2015 - 09/2019',
         company: 'Ton Duc Thang University',
         position: 'Chemical Engineering',
-        description: ['- GPA: 7.5/10'],
       },
     ],
   },
@@ -91,41 +89,14 @@ export const DataUser = {
   portfolio: {
     coding: [
       {
-        imgTitle: 'prowe',
-        image:
-          'https://res.cloudinary.com/ngocxxu/image/upload/v1709398604/portfolio-2/prowe_x0jry8.jpg',
-        title: 'Prowe Electronic',
-        description:
-          'Web is a electronic e-commerce web which I built the backend from myself and combined it with the frontend.',
-        hashtag: ['#reactjs', '#fullstack', '#database'],
-        frontend: 'https://github.com/ngocxxu/prowe_electronic_store',
-        backend: 'https://github.com/ngocxxu/prowe_electronic_store_server',
-        demo: 'https://prowe-electronic-store.web.app/',
-      },
-      {
-        image:
-          'https://res.cloudinary.com/ngocxxu/image/upload/v1709398603/portfolio-2/realtor_xpbkpw.jpg',
-        title: 'Real Estate',
-        description:
-          'Web is a basic web with rental homes and for-sale properties, advanced property filtering.',
-        hashtag: ['#nextjs', '#e-commerce', '#trendy'],
-        frontend: 'https://github.com/ngocxxu/Modern-Real-Estate-Project',
-        demo: 'https://modern-real-estate-project.vercel.app/',
-      },
-      {
-        image:
-          'https://res.cloudinary.com/ngocxxu/image/upload/v1709398604/portfolio-2/papzi_whcifc.jpg',
-        title: 'Papzi Food',
-        description:
-          'Web is used to buy or order fast food anything you want. I use API of CommerceJS to build it.',
-        hashtag: ['#reactjs', '#e-commerce', '#foody'],
-        frontend: 'https://github.com/ngocxxu/Foody_Web',
-        demo: 'https://papzi-foody.web.app/',
-      },
-      {
         imgTitle: 'vocab',
         image:
-          'https://res.cloudinary.com/ngocxxu/image/upload/v1726651554/portfolio-2/vocab-2_tigsta.png',
+          'https://res.cloudinary.com/ngocxxu/image/upload/v1764484658/Screenshot_2025-11-30_at_13.36.57_vqw0hq.png',
+        images: [
+          'https://res.cloudinary.com/ngocxxu/image/upload/v1764484919/Screenshot_2025-11-30_at_13.41.33_x9mdsa.png',
+          'https://res.cloudinary.com/ngocxxu/image/upload/v1764485022/Screenshot_2025-11-30_at_13.43.04_gdkdx9.png',
+          'https://res.cloudinary.com/ngocxxu/image/upload/v1764484658/Screenshot_2025-11-30_at_13.36.57_vqw0hq.png',
+        ],
         title: 'Vocabulary Management',
         description:
           'Web is a vocab management web which I built the backend from myself and combined it with the frontend.',

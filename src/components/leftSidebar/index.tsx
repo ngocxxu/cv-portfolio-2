@@ -37,7 +37,7 @@ export const LeftSidebar = () => {
           style: { transitionDelay: '1s' },
         }}
         className={style.image}
-        src='https://res.cloudinary.com/ngocxxu/image/upload/v1726651876/portfolio-2/me_bvu1cq.jpg'
+        src='https://res.cloudinary.com/ngocxxu/image/upload/v1764482728/CV/Gemini_Generated_Image_xk0onrxk0onrxk0o_kwbdqx.jpg'
       />
       <h3 className={style.email}>{DataUser.home.mail}</h3>
       <h3 className={style.address}>{DataUser.home.address}</h3>
