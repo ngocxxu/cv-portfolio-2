@@ -13,7 +13,7 @@ import style from './style.module.css';
 const social = [
   {
     icon: <IconBrandLinkedin />,
-    link: 'https://www.linkedin.com/in/ngoc-quach-17397620a/',
+    link: 'https://www.linkedin.com/in/ngoc-quach-phung-bao/',
     color: '',
   },
   { icon: <IconBrandGithub />, link: 'https://github.com/ngocxxu' },

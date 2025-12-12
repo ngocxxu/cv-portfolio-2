@@ -41,7 +41,7 @@ const skills = [
     detail: [
       'NextJS',
       'ReactJS',
-      'Svelte',
+      'SvelteKit',
     ],
   },
   {
