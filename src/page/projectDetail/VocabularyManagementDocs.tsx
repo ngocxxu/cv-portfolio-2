@@ -33,3 +33,4 @@ export const VocabularyManagementDocs = ({
   return <Box className={style.docsContentWrapper}>{renderContent()}</Box>;
 };
 
+

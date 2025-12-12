@@ -25,11 +25,10 @@ export const DataUser = {
         company: 'ST Engineering',
         position: 'Fullstack Developer',
         description: [
-          '- Implemented CI/CD pipelines for software deployment, reducing manual processes and improving team efficiency in delivering applications to production environments.',
-          '- Supported microservices deployment on Amazon EKS, gaining hands-on experience with Kubernetes, containerization, and cloud infrastructure management.',
-          '- Collaborated with cross-functional teams to learn and apply DevOps best practices, demonstrating strong technical adaptability and eagerness to grow.',
-          '- Designed and implemented scalable backend systems using modern frameworks and technologies, ensuring high performance and reliability for production environments.',
-          '- Set up and configured new projects backend from scratch, including defining architecture, integrating APIs, and establishing development workflows to support seamless collaboration across teams.',
+          '- Developed robust backend services and RESTful APIs, ensuring efficient data processing and high system availability.',
+          '- Collaborated with frontend teams to integrate backend APIs, troubleshooting issues to ensure seamless end-to-end application functionality.',
+          '- Designed and implemented AWS architecture with Terraform, enabling automated, consistent, and reproducible setups.',
+          '- Deployed microservices using Kubernetes and Docker, and streamlined CI/CD pipelines to ensure scalable and automated delivery.',
         ],
       },
       {

@@ -24,3 +24,4 @@ export const MermaidDiagram = ({ imagePath, alt = 'User flow diagram' }: Mermaid
     </div>
   );
 };
+

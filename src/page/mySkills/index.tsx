@@ -1,6 +1,5 @@
 import { Badge, Box, Flex } from '@mantine/core';
 import {
-  IconApps,
   IconBrandAdobe,
   IconBrandAws,
   IconBrandNextjs,
@@ -18,38 +17,37 @@ import style from './style.module.css';
 
 const skills = [
   {
-    icon: <IconBrandReact />,
-    title: 'Frontend',
-    detail: [
-      'Svelte',
-      'ReactJS',
-      'NextJS',
-    ],
-  },
-  {
-    icon: <IconBrandNextjs />,
-    title: 'Backend',
-    detail: ['NestJS', 'ExpressJS', 'Django', 'Ruby On Rails', 'Hasura'],
-  },
-  {
     icon: <IconBrandAws />,
     title: 'DevOps',
     detail: [
       'AWS',
       'K8s',
-      'Docker',
-      'Github Action',
-      'Gitlab CI',
-      'NginX',
-      'Redis',
-      'Koyeb',
+      'Ansible',
+      'Terraform',
+      'Github Action/ GitlabCI',
+      'Argo/FluxCD',
+      'Cloudflare',
       'Firebase',
+    ],
+  },
+  {
+    icon: <IconBrandNextjs />,
+    title: 'Backend',
+    detail: ['NestJS', 'ExpressJS', 'Redis', 'Hasura', 'Keycloak'],
+  },
+  {
+    icon: <IconBrandReact />,
+    title: 'Frontend',
+    detail: [
+      'NextJS',
+      'ReactJS',
+      'Svelte',
     ],
   },
   {
     icon: <IconDatabase />,
     title: 'Database',
-    detail: ['MongoDB', 'SQL', 'MySQL', 'GraphQL', 'PostgreSQL'],
+    detail: ['PostgreSQL', 'MongoDB', 'GraphQL', 'CockroachDB'],
   },
   {
     icon: <IconMicroscope />,
@@ -60,11 +58,6 @@ const skills = [
     icon: <IconCode />,
     title: 'Language',
     detail: ['Javascript/Typescript', 'C#', 'Java', 'Python', 'Ruby'],
-  },
-  {
-    icon: <IconApps />,
-    title: 'Others',
-    detail: ['Micro frontend(Vite)', 'Git', 'WSL', 'Linux', 'Vim'],
   },
   {
     icon: <IconBrandAdobe />,
