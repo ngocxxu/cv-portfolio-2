@@ -14,6 +14,7 @@ type TAnimationStackedCard = {
     image: string;
     title: string;
     images?: string[];
+    devops?: string;
   };
   progress: MotionValue<number>;
   index: number;
@@ -63,7 +64,7 @@ export const AnimationStackedCard = ({
   index,
   total,
 }: TAnimationStackedCard) => {
-  const { demo, frontend, backend, image, title, images } = content;
+  const { demo, frontend, backend, image, title, images, devops } = content;
   const navigate = useNavigate();
   const yRange = [index / total, (index + 1) / total];
   const opacity = useTransform(progress, yRange, [0, 1]);
@@ -135,6 +136,16 @@ export const AnimationStackedCard = ({
                 radius='xl'
               >
                 Backend
+              </Button>
+            )}
+             {devops && (
+              <Button
+                onClick={() => window.open(devops, '_blank')}
+                classNames={{ root: style.root }}
+                variant='filled'
+                radius='xl'
+              >
+                DevOps
               </Button>
             )}
             <Button

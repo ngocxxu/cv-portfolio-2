@@ -102,6 +102,7 @@ export const DataUser = {
         hashtag: ['#fullstack', '#k8s', '#vocabulary'],
         frontend: 'https://github.com/ngocxxu/vocab-management-fe-2',
         backend: 'https://github.com/ngocxxu/vocab-management-be-2',
+        devops: 'https://github.com/ngocxxu/infrastructure',
         demo: 'https://vocab.ngocquach.top/',
       },
       // {
