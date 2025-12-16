@@ -103,7 +103,7 @@ export const DataUser = {
         frontend: 'https://github.com/ngocxxu/vocab-management-fe-2',
         backend: 'https://github.com/ngocxxu/vocab-management-be-2',
         devops: 'https://github.com/ngocxxu/infrastructure',
-        demo: 'https://vocab.ngocquach.top/',
+        demo: 'https://vocab.ngocquach.com/',
       },
       // {
       //   porfolioImage:
