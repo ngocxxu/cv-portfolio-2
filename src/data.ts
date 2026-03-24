@@ -25,10 +25,10 @@ export const DataUser = {
         company: 'ST Engineering',
         position: 'Fullstack Developer',
         description: [
-          '- Developed robust backend services and RESTful APIs, ensuring efficient data processing and high system availability.',
-          '- Collaborated with frontend teams to integrate backend APIs, troubleshooting issues to ensure seamless end-to-end application functionality.',
-          '- Designed and implemented AWS architecture with Terraform, enabling automated, consistent, and reproducible setups.',
-          '- Deployed microservices using Kubernetes and Docker, and streamlined CI/CD pipelines to ensure scalable and automated delivery.',
+          '- Designed and implemented AWS architecture utilizing Terraform to enable automated and reproducible environment setups.',
+          '- Deployed scalable microservices via Kubernetes and Docker, and streamlined CI/CD pipelines for automated delivery.',
+          '- Developed robust backend services and RESTful APIs to guarantee efficient data processing and high availability.',
+          '- Collaborated with cross-functional teams to integrate APIs, troubleshooting end-to-end functionality for seamless system operations.',
         ],
       },
       {
@@ -36,12 +36,10 @@ export const DataUser = {
         company: 'Nexon Co., Ltd.',
         position: 'Software Developer',
         description: [
-          '- Development of services required for publishing and management by using of Attendance page.',
-          '- Developing and implementing highly-responsive user interface components using React concepts.',
-          '- Troubleshooting interface software and debugging application codes.',
-          '- Develop and optimize front-end UI to ensure the application is rendered consistently in browser environments.',
-          '- Collaborate with Backend Engineers to build features and experiments.',
-          '- Monitoring, improving front-end performance and ensuring the application is rendered consistently in browser environments.',
+          '- Engineered services for publishing and management systems, focusing on the core functionality of the Attendance page.',
+          '- Collaborated tightly with Backend Engineers to design API integrations, build features, and conduct system experiments.',
+          '- Troubleshot application codes and debugged software layers to resolve issues and ensure stable system performance.',
+          '- Monitored and optimized client-side UI performance, ensuring consistent application rendering across various browser environments.',
         ],
       },
       {
