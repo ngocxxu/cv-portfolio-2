@@ -11,12 +11,12 @@ export const DataUser = {
     mail: 'ngocquach43@gmail.com',
     dateToWork: '06/2021',
     smallText:
-      "As a developer, I specialize in creating elegantly simple solutions, and I'm deeply passionate about my craft. It's just as straightforward as that! My approach prioritizes simplicity and beauty in every project I undertake. This philosophy fuels my passion and commitment to excellence every day.",
+      'As a Software Engineer, I specialize in architecting robust and scalable backend systems. My approach prioritizes efficiency, high performance, and clean code in every infrastructure project I undertake. This engineering philosophy fuels my commitment to building highly reliable applications every day.',
   },
   about: {
-    bigText: 'Every great website begin with an even better story',
+    bigText: 'Every great application begins with a rock-solid foundation.',
     smallText:
-      'I used to work in chemical engineering, but my passion for IT, which ignited during middle school, led me back to the tech world. Exploring frontend development excites me because I aim to deliver top products that not only meet consumer needs but exceed expectations. The prospect of joining your company is incredibly exciting for me because, above all, I prioritize aligning my work with my passion. Being able to contribute to your team would be a stroke of luck. With a fervent interest in IT and a touch of design, I am committed to honing my skills continuously. Life is fleeting, and I aim to absorb as much new knowledge as possible.',
+      'With a comprehensive background in full-lifecycle web development and a formal Degree in Information Technology, I have found my true passion in Backend engineering and Cloud infrastructure. While my full-stack experience gives me a deep understanding of how to build user-centric products, my core focus is now on designing optimized APIs, automating deployment pipelines, and building scalable microservices. The prospect of joining a tech-driven company excites me because I prioritize tackling complex system architecture challenges. With a fervent interest in DevOps practices and server-side logic, I am committed to continuously honing my technical skills to deliver innovative, high-performance solutions.',
   },
   resume: {
     experience: [
@@ -96,7 +96,7 @@ export const DataUser = {
         ],
         title: 'Vocabulary Management',
         description:
-          'Web is a vocab management web which I built the backend from myself and combined it with the frontend.',
+          'For this project, I architected a self-hosted infrastructure on a VPS, systematically provisioning environments with Ansible and orchestrating microservices via K3s. To ensure automated and reliable continuous delivery, I implemented GitOps methodologies using FluxCD. The core application is powered by a robust backend engineered with NestJS, PostgreSQL, and Supabase, which integrates Redis and BullMQ for highly efficient asynchronous message queuing and background task processing. Furthermore, to maintain high system reliability and comprehensive observability, I configured Grafana for metrics monitoring, integrated Doppler for secure secrets management, and utilized Sentry for error tracking across the application.',
         hashtag: ['#fullstack', '#k8s', '#vocabulary'],
         frontend: 'https://github.com/ngocxxu/vocab-management-fe-2',
         backend: 'https://github.com/ngocxxu/vocab-management-be-2',
