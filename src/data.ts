@@ -16,7 +16,7 @@ export const DataUser = {
   about: {
     bigText: 'Every great application begins with a rock-solid foundation.',
     smallText:
-      'With a comprehensive background in full-lifecycle web development and a formal Degree in Information Technology, I have found my true passion in Backend engineering and Cloud infrastructure. While my full-stack experience gives me a deep understanding of how to build user-centric products, my core focus is now on designing optimized APIs, automating deployment pipelines, and building scalable microservices. The prospect of joining a tech-driven company excites me because I prioritize tackling complex system architecture challenges. With a fervent interest in DevOps practices and server-side logic, I am committed to continuously honing my technical skills to deliver innovative, high-performance solutions.',
+      'With a comprehensive background in full-lifecycle web development, I have found my true passion in Backend engineering and Cloud infrastructure. Because I deeply understand how frontends consume data, I am able to design highly optimized APIs, automate deployment pipelines, and build scalable backend systems. The prospect of joining a tech-driven company excites me, as I prioritize tackling complex system architecture challenges. Combining server-side logic with DevOps practices, I am highly adaptable—always ready to master new technologies as company needs evolve to deliver innovative, high-performance solutions.',
   },
   resume: {
     experience: [
@@ -25,19 +25,19 @@ export const DataUser = {
         company: 'ST Engineering',
         position: 'Fullstack Developer',
         description: [
-          '- Designed and implemented AWS architecture utilizing Terraform to enable automated and reproducible environment setups.',
-          '- Deployed scalable microservices via Kubernetes and Docker, and streamlined CI/CD pipelines for automated delivery.',
-          '- Developed robust backend services and RESTful APIs to guarantee efficient data processing and high availability.',
+          '- Built and optimized backend services and APIs to handle efficient data flow and maintain system uptime.',
+          '- Deployed scalable backend systems via Kubernetes and Docker, and streamlined CI/CD pipelines for automated delivery.',
           '- Collaborated with cross-functional teams to integrate APIs, troubleshooting end-to-end functionality for seamless system operations.',
+          '- Implemented automated and reproducible environment setups utilizing core AWS services.',
         ],
       },
       {
         time: '06/2022 - 09/2024',
         company: 'Nexon Co., Ltd.',
-        position: 'Software Developer',
+        position: 'Fullstack Developer',
         description: [
           '- Engineered services for publishing and management systems, focusing on the core functionality of the Attendance page.',
-          '- Collaborated tightly with Backend Engineers to design API integrations, build features, and conduct system experiments.',
+          '- Collaborated tightly with engineers to design API integrations, build features, and conduct system experiments.',
           '- Troubleshot application codes and debugged software layers to resolve issues and ensure stable system performance.',
           '- Monitored and optimized client-side UI performance, ensuring consistent application rendering across various browser environments.',
         ],
@@ -45,24 +45,21 @@ export const DataUser = {
       {
         time: '11/2021 - 05/2022',
         company: 'MiTek Vietnam (Platinum Global Co., Ltd.)',
-        position: 'Software Developer',
+        position: 'Frontend Developer',
         description: [
           '- Design, code, test and debug new software utilizing technologies for the project assigned.',
           '- Website about construction process management, a house when built will display information including materials, time and labor. Customers can monitor and request changes directly on that house.',
-          '- Participate in resolving prduction issues and tackling bugs in the system.',
-          '- Collaborate with Product Management, Software Quality Assurance, and other development teams to ensure that solutions are efficient, consistent and fulfill business needs.',
-          '- Participate in requirements reviews, design and design reviews.',
+          '- Participate in resolving production issues and tackling bugs in the system.',
           '- Work in an Agile software development environment (using Scrum), participating in daily scrum meetings, monthly retrospective and planning meetings.',
         ],
       },
       {
         time: '06/2021 - 08/2021',
         company: 'Kyanon Digital',
-        position: 'Software Developer (Intern)',
+        position: 'Intern Frontend Developer',
         description: [
           '- Building UI for the landing page of the website on the client-side and server-side.',
           '- Join in realistic projects and daily meetings with team and customer.',
-          '- Participate in projects to develop web applications.',
           '- Work with other project members, responsible for the implementation & code review.',
           '- Ensure the assigned tasks to be performed on-time and with high quality.',
         ],
